@@ -361,6 +361,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)VoiceCallback.h">
       <Filter>Sounds</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)AudioData.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Common.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DeviceState.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)IVibrationBrick.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)VibrationBrick.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)WASAPICapture.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp">
@@ -578,6 +584,8 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)RiffReader.cpp">
       <Filter>Sounds</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)VibrationBrick.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)WASAPICapture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">
