@@ -24,7 +24,7 @@ unsigned int Look::GetWidth()
 	{
 		throw PlayerException("Look::GetWidth called with no texture defined.");
 	}
-	return (unsigned int)m_texture->GetBitmap()->GetSize().width;
+	return (unsigned int)m_texture->GetWidth();
 }
 
 unsigned int Look::GetHeight()
@@ -33,7 +33,7 @@ unsigned int Look::GetHeight()
 	{
 		throw PlayerException("Look::GetHeight called with no texture defined.");
 	}
-	return (unsigned int)m_texture->GetBitmap()->GetSize().height;
+	return (unsigned int)m_texture->GetHeight();
 }
 
 void Look::LoadTexture(const std::shared_ptr<DX::DeviceResources>& deviceResources)

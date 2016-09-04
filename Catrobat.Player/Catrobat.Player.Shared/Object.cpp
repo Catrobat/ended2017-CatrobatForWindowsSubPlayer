@@ -271,10 +271,11 @@ void Object::RecalculateTransformation()
 	{
 		return;
 	}
-	m_renderTargetSize = m_look->GetBitMap()->GetSize();
+    m_renderTargetSize.width = (float)m_look->GetWidth();
+    m_renderTargetSize.height = (float)m_look->GetHeight();
+
 	m_renderTargetSize.width *= m_ratio.width;
 	m_renderTargetSize.height *= m_ratio.height;
-
 	Matrix3x2F translation = CalculateTranslationMatrix();
 	D2D1_POINT_2F origin;
 	origin.x = translation._31 + m_renderTargetSize.width / 2;
@@ -287,7 +288,9 @@ void Object::RecalculateTransformation()
 
 Matrix3x2F Object::CalculateTranslationMatrix()
 {
-	m_renderTargetSize = m_look->GetBitMap()->GetSize();
+    m_renderTargetSize.width = (float)m_look->GetWidth();
+    m_renderTargetSize.height = (float)m_look->GetHeight();
+
 	m_renderTargetSize.width *= m_ratio.width;
 	m_renderTargetSize.height *= m_ratio.height;
 	Matrix3x2F renderTarget = Matrix3x2F::Identity();
