@@ -18,4 +18,5 @@ PlaySoundBrick::PlaySoundBrick(Catrobat_Player::NativeComponent::IPlaySoundBrick
 void PlaySoundBrick::Execute()
 {
 	thread t1(&SoundManager::Play, SoundManager::Instance(), m_filename);
+	t1.detach();
 }

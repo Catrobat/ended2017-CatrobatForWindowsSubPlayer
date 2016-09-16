@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Catrobat.Player.WindowsPhone", "Catrobat.Player\Catrobat.Player.WindowsPhone\Catrobat.Player.WindowsPhone.vcxproj", "{54144CA7-B859-4F79-B682-DAD92B4E3353}"
 EndProject
@@ -9,6 +9,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Catrobat.Player.Shared", "C
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Catrobat.Player\Catrobat.Player.Shared\Catrobat.Player.Shared.vcxitems*{4b55f37f-21d4-40ee-8c6b-7fe0f32f61be}*SharedItemsImports = 9
 		Catrobat.Player\Catrobat.Player.Shared\Catrobat.Player.Shared.vcxitems*{54144ca7-b859-4f79-b682-dad92b4e3353}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
