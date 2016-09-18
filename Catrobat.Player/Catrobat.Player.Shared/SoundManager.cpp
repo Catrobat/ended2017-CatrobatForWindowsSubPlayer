@@ -1,10 +1,12 @@
 #include "pch.h"
 #include "Helper.h"
+#include "ProjectDaemon.h"
 #include "RiffReader.h"
 #include "SoundManager.h"
 #include "VoiceCallback.h"
 
 using Windows::Storage::Streams::IBuffer;
+using namespace ProjectStructure;
 
 SoundManager *SoundManager::__instance = nullptr;
 
@@ -55,7 +57,8 @@ void SoundManager::deleteInstance()
 bool SoundManager::Play(string fileName)
 {
 	// Convert string because CreateFile2 needs LCPWSTR
-	wstring wstr = Helper::ConvertStringToLPCWSTR(fileName);
+	string path = ProjectDaemon::Instance()->GetProjectPath() + "\\sounds\\" + fileName;
+	wstring wstr = Helper::ConvertStringToLPCWSTR(path);
 	LPCWSTR fileNameConverted = wstr.c_str();
 	// Open exisiting file and create handle
 	HANDLE fileHandle = CreateFile2(fileNameConverted, GENERIC_READ, FILE_SHARE_READ, OPEN_EXISTING, NULL);
