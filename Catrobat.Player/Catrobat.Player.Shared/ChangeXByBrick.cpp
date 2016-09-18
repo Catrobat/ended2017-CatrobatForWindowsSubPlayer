@@ -15,7 +15,6 @@ ChangeXByBrick::ChangeXByBrick(Catrobat_Player::NativeComponent::IChangeXByBrick
 
 void ChangeXByBrick::Execute()
 {
-    Concurrency::wait(20); // 50 Hz
 	float currentX, currentY;
 	m_parent->GetParent()->GetTranslation(currentX, currentY);
 	m_parent->GetParent()->SetTranslation(currentX + Interpreter::Instance()->EvaluateFormulaToFloat(m_offsetX, m_parent->GetParent()), currentY);
