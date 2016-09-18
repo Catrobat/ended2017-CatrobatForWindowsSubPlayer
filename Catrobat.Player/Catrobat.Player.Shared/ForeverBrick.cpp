@@ -21,7 +21,8 @@ void ForeverBrick::Execute()
 	{
 		for each (auto &brick in m_brickList)
 		{
-			brick->Execute();
-		}
+            brick->Execute();
+            Concurrency::wait(20); // 50 Hz
+        }
 	}
 }

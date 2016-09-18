@@ -24,8 +24,8 @@ void GlideToBrick::Execute()
 
 	float currentX, currentY;
 	m_parent->GetParent()->GetTranslation(currentX, currentY);
-	float x_movement = Interpreter::Instance()->EvaluateFormulaToFloat(m_xDestination, m_parent->GetParent()) / steps;
-	float y_movement = Interpreter::Instance()->EvaluateFormulaToFloat(m_yDestination, m_parent->GetParent()) / steps;
+	float x_movement = (Interpreter::Instance()->EvaluateFormulaToFloat(m_xDestination, m_parent->GetParent()) - currentX) / steps;
+	float y_movement = (Interpreter::Instance()->EvaluateFormulaToFloat(m_yDestination, m_parent->GetParent()) - currentY) / steps;
 
 	for (int i = 0; i < steps; i++)
 	{
