@@ -115,6 +115,11 @@ shared_ptr<IXAudio2MasteringVoice> SoundManager::getMasteringVoice()
 	return masteringVoice;
 }
 
+float SoundManager::getVolume()
+{
+	return volume;
+}
+
 void SoundManager::setVolume(float new_volume)
 {
 	volume = new_volume;

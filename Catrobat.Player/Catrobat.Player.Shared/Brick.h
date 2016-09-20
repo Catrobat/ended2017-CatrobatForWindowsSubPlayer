@@ -39,7 +39,8 @@ namespace ProjectStructure
 			NextlookBrick,
 			SetVariableBrick,
             VibrationBrick,
-			SetVolumeToBrick
+			SetVolumeToBrick,
+			ChangeVolumeByNBrick
 		};
 
 		Script* GetParent();
