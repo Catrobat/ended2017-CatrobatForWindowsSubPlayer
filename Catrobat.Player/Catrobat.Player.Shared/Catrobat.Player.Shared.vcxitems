@@ -64,6 +64,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)FormulaTreeFatalException.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GlideToBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Header.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)IStopSoundsBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)IVibrationBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)RiffReader.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SoundManager.h" />
@@ -139,6 +140,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)ShowBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SoundInfo.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)StartScript.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)StopSoundsBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TextureDaemon.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TurnLeftBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TurnRightBrick.h" />
@@ -219,6 +221,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)ShowBrick.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)SoundInfo.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)StartScript.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)StopSoundsBrick.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TextureDaemon.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TurnLeftBrick.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TurnRightBrick.cpp" />

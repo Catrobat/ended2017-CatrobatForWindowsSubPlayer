@@ -367,6 +367,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)IVibrationBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)VibrationBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WASAPICapture.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)StopSoundsBrick.h">
+      <Filter>Objects\Bricks\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)IStopSoundsBrick.h">
+      <Filter>NativeComponent\Interface\Bricks</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp">
@@ -586,6 +592,9 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)VibrationBrick.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WASAPICapture.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)StopSoundsBrick.cpp">
+      <Filter>Objects\Bricks\Sound</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">
