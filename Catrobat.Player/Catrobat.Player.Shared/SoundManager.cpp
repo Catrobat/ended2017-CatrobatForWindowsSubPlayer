@@ -98,10 +98,24 @@ bool SoundManager::Play(string fileName)
 		delete xAudioBuffer.get()->pAudioData;
 		return false;
 	}
-
+	int sound_map_index = 0;
+	runningVoicesMutex.lock();
+	for (int sound_map_index_counter = 0; sound_map_index_counter < 100000; sound_map_index_counter++)
+	{
+		if (runningVoices.count(sound_map_index_counter) == 0)
+		{
+			runningVoices[sound_map_index_counter] = voice;
+			sound_map_index = sound_map_index_counter;
+			break;
+		}
+	}
+	runningVoicesMutex.unlock();
 	// Start the voice, then delete
 	hr = voice->Start(0);
 	WaitForSingleObjectEx(callback.hBufferEndEvent, 180000, true);
+	runningVoicesMutex.lock();
+	runningVoices.erase(runningVoices.find(sound_map_index));
+	runningVoicesMutex.unlock();
 	return (hr == S_OK);
 }
 
@@ -113,4 +127,14 @@ shared_ptr<IXAudio2> SoundManager::getXAudio()
 shared_ptr<IXAudio2MasteringVoice> SoundManager::getMasteringVoice()
 {
 	return masteringVoice;
+}
+
+void SoundManager::stopAllSounds()
+{
+	runningVoicesMutex.lock();
+	for (map<int, shared_ptr<IXAudio2SourceVoice>>::iterator it = runningVoices.begin(); it != runningVoices.end(); it++)
+	{
+		it->second->Stop();
+	}
+	runningVoicesMutex.unlock();
 }

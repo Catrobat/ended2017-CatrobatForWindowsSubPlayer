@@ -55,6 +55,8 @@
 #include "SetYBrick.h"
 #include "IShowBrick.h"
 #include "ShowBrick.h"
+#include "IStopSoundsBrick.h"
+#include "StopSoundsBrick.h"
 #include "ITurnLeftBrick.h"
 #include "TurnLeftBrick.h"
 #include "IVibrationBrick.h"
@@ -291,6 +293,13 @@ Script::Script(TypeOfScript scriptType, Object* parent, Catrobat_Player::NativeC
 		if (showBrick)
 		{
 			usedList->push_back(std::unique_ptr<Brick>(make_unique<ShowBrick>(this)));
+			continue;
+		}
+
+		auto stopSoundsBrick = dynamic_cast<Catrobat_Player::NativeComponent::IStopSoundsBrick^>(brick);
+		if (stopSoundsBrick)
+		{
+			usedList->push_back(std::unique_ptr<Brick>(make_unique<StopSoundsBrick>(stopSoundsBrick, this)));
 			continue;
 		}
 

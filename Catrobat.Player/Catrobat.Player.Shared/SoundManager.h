@@ -2,6 +2,7 @@
 
 #include "pch.h"
 #include <xaudio2.h>
+#include <mutex>
 
 using namespace std;
 
@@ -11,7 +12,8 @@ private:
 	static SoundManager *__instance; // shared pointer?
 	shared_ptr<IXAudio2> xAudio;
 	shared_ptr<IXAudio2MasteringVoice> masteringVoice;
-	map<string, IXAudio2SourceVoice*> runningVoices;
+	map<int, shared_ptr<IXAudio2SourceVoice>> runningVoices;
+	mutex runningVoicesMutex;
 public:
 	SoundManager();
 	~SoundManager();
@@ -20,4 +22,5 @@ public:
 	bool Play(string fileName);
 	shared_ptr<IXAudio2> getXAudio();
 	shared_ptr<IXAudio2MasteringVoice> getMasteringVoice();
+	void stopAllSounds();
 };
