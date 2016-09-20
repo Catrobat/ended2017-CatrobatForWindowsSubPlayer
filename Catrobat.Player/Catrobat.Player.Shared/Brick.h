@@ -38,7 +38,8 @@ namespace ProjectStructure
 			ChangeGhostEffectByBrick,
 			NextlookBrick,
 			SetVariableBrick,
-            VibrationBrick
+            VibrationBrick,
+			SetVolumeToBrick
 		};
 
 		Script* GetParent();
