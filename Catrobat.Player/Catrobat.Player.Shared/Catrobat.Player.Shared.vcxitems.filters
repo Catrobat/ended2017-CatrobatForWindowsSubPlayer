@@ -367,6 +367,18 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)IVibrationBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)VibrationBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)WASAPICapture.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ChangeVolumeByNBrick.h">
+      <Filter>Objects\Bricks\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)SetVolumeToBrick.h">
+      <Filter>Objects\Bricks\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)IChangeVolumeByNBrick.h">
+      <Filter>NativeComponent\Interface\Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ISetVolumeToBrick.h">
+      <Filter>NativeComponent\Interface\Bricks</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp">
@@ -586,6 +598,12 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)VibrationBrick.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)WASAPICapture.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ChangeVolumeByNBrick.cpp">
+      <Filter>Objects\Bricks\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)SetVolumeToBrick.cpp">
+      <Filter>Objects\Bricks\Sound</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">

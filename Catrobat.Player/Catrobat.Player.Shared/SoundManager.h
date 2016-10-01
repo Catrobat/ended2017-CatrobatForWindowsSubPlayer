@@ -12,6 +12,7 @@ private:
 	shared_ptr<IXAudio2> xAudio;
 	shared_ptr<IXAudio2MasteringVoice> masteringVoice;
 	map<string, IXAudio2SourceVoice*> runningVoices;
+	float volume;
 public:
 	SoundManager();
 	~SoundManager();
@@ -20,4 +21,6 @@ public:
 	bool Play(string fileName);
 	shared_ptr<IXAudio2> getXAudio();
 	shared_ptr<IXAudio2MasteringVoice> getMasteringVoice();
+	float getVolume();
+	void setVolume(float new_volume);
 };
