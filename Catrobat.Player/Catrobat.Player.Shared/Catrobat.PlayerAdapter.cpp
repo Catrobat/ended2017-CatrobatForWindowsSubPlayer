@@ -33,7 +33,6 @@ namespace Catrobat_Player
     Catrobat_PlayerAdapter::~Catrobat_PlayerAdapter()
     {
         // Stop rendering and processing events on destruction
-        critical_section::scoped_lock lock(m_main->GetCriticalSection());
         m_main->StopRenderLoop();
         m_coreInput->Dispatcher->StopProcessEvents();
     }
