@@ -15,6 +15,8 @@
 #include "ChangeSizeByBrick.h"
 #include "IChangeVariableBrick.h"
 #include "ChangeVariableBrick.h"
+#include "IChangeVolumeByNBrick.h"
+#include "ChangeVolumeByNBrick.h"
 #include "IChangeXByBrick.h"
 #include "ChangeXByBrick.h"
 #include "IChangeYByBrick.h"
@@ -49,6 +51,8 @@
 #include "SetGhostEffectBrick.h"
 #include "ISetVariableBrick.h"
 #include "SetVariableBrick.h"
+#include "ISetVolumeToBrick.h"
+#include "SetVolumeToBrick.h"
 #include "ISetXBrick.h"
 #include "SetXBrick.h"
 #include "ISetYBrick.h"
@@ -191,6 +195,13 @@ Script::Script(TypeOfScript scriptType, Object* parent, Catrobat_Player::NativeC
 			continue;
 		}
 
+		auto changeVolumeByNBrick = dynamic_cast<Catrobat_Player::NativeComponent::IChangeVolumeByNBrick^>(brick);
+		if (changeVolumeByNBrick)
+		{
+			usedList->push_back(std::unique_ptr<Brick>(make_unique<ChangeVolumeByNBrick>(changeVolumeByNBrick, this)));
+			continue;
+		}
+
 		auto changeXByBrick = dynamic_cast<Catrobat_Player::NativeComponent::IChangeXByBrick^>(brick);
 		if (changeXByBrick)
 		{
@@ -272,6 +283,13 @@ Script::Script(TypeOfScript scriptType, Object* parent, Catrobat_Player::NativeC
 		if (setVariableBrick)
 		{
 			usedList->push_back(std::unique_ptr<Brick>(make_unique<SetVariableBrick>(setVariableBrick, this)));
+			continue;
+		}
+
+		auto setVolumeToBrick = dynamic_cast<Catrobat_Player::NativeComponent::ISetVolumeToBrick^>(brick);
+		if (setVolumeToBrick)
+		{
+			usedList->push_back(std::unique_ptr<Brick>(make_unique<SetVolumeToBrick>(setVolumeToBrick, this)));
 			continue;
 		}
 

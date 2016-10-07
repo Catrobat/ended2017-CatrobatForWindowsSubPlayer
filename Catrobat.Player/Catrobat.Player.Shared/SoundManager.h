@@ -8,13 +8,14 @@ using namespace std;
 
 class SoundManager
 {
-private:
+  private:
 	static SoundManager *__instance; // shared pointer?
 	shared_ptr<IXAudio2> xAudio;
 	shared_ptr<IXAudio2MasteringVoice> masteringVoice;
 	map<int, shared_ptr<IXAudio2SourceVoice>> runningVoices;
 	mutex runningVoicesMutex;
-public:
+	float volume;
+  public:
 	SoundManager();
 	~SoundManager();
 	static SoundManager *Instance();
@@ -23,4 +24,6 @@ public:
 	shared_ptr<IXAudio2> getXAudio();
 	shared_ptr<IXAudio2MasteringVoice> getMasteringVoice();
 	void stopAllSounds();
+	float getVolume();
+	void setVolume(float new_volume);
 };

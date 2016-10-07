@@ -41,6 +41,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)ChangeGhostEffectByBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ChangeSizeByBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ChangeVariableBrick.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ChangeVolumeByNBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ChangeXByBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ChangeYByBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h" />
@@ -64,9 +65,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)FormulaTreeFatalException.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GlideToBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Header.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)IChangeVolumeByNBrick.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ISetVolumeToBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)IStopSoundsBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)IVibrationBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)RiffReader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)SetVolumeToBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SoundManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Helper.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)HideBrick.h" />
@@ -171,6 +175,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)ChangeGhostEffectByBrick.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)ChangeSizeByBrick.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)ChangeVariableBrick.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ChangeVolumeByNBrick.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)ChangeXByBrick.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)ChangeYByBrick.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\DeviceResources.cpp" />
@@ -210,6 +215,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Project.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)ProjectDaemon.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)RiffReader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)SetVolumeToBrick.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)SoundManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)RepeatBrick.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Script.cpp" />

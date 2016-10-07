@@ -131,10 +131,21 @@ shared_ptr<IXAudio2MasteringVoice> SoundManager::getMasteringVoice()
 
 void SoundManager::stopAllSounds()
 {
-	runningVoicesMutex.lock();
-	for (map<int, shared_ptr<IXAudio2SourceVoice>>::iterator it = runningVoices.begin(); it != runningVoices.end(); it++)
-	{
-		it->second->Stop();
-	}
-	runningVoicesMutex.unlock();
+    runningVoicesMutex.lock();
+    for (map<int, shared_ptr<IXAudio2SourceVoice>>::iterator it = runningVoices.begin(); it != runningVoices.end(); it++)
+    {
+        it->second->Stop();
+    }
+    runningVoicesMutex.unlock();
+}
+
+float SoundManager::getVolume()
+{
+	return volume;
+}
+
+void SoundManager::setVolume(float new_volume)
+{
+	volume = new_volume;
+	masteringVoice->SetVolume(new_volume);
 }
