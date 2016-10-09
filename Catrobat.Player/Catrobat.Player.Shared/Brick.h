@@ -40,7 +40,8 @@ namespace ProjectStructure
 			SetVariableBrick,
             VibrationBrick,
 			SetVolumeToBrick,
-			ChangeVolumeByNBrick
+			ChangeVolumeByNBrick,
+            StopSoundsBrick
 		};
 
 		Script* GetParent();

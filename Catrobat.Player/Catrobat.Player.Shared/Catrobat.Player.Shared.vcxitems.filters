@@ -373,10 +373,16 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)SetVolumeToBrick.h">
       <Filter>Objects\Bricks\Sound</Filter>
     </ClInclude>
+	<ClInclude Include="$(MSBuildThisFileDirectory)StopSoundsBrick.h">
+      <Filter>Objects\Bricks\Sound</Filter>
+    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)IChangeVolumeByNBrick.h">
       <Filter>NativeComponent\Interface\Bricks</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)ISetVolumeToBrick.h">
+      <Filter>NativeComponent\Interface\Bricks</Filter>
+    </ClInclude>
+	<ClInclude Include="$(MSBuildThisFileDirectory)IStopSoundsBrick.h">
       <Filter>NativeComponent\Interface\Bricks</Filter>
     </ClInclude>
   </ItemGroup>
@@ -602,6 +608,9 @@
       <Filter>Objects\Bricks\Sound</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)SetVolumeToBrick.cpp">
+      <Filter>Objects\Bricks\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)StopSoundsBrick.cpp">
       <Filter>Objects\Bricks\Sound</Filter>
     </ClCompile>
   </ItemGroup>
