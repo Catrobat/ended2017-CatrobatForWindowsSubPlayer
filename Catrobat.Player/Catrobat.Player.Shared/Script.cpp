@@ -78,72 +78,95 @@ using namespace ProjectStructure;
 Script::Script(TypeOfScript scriptType, Object* parent, Catrobat_Player::NativeComponent::IScript^ script) :
 	m_scriptType(scriptType), m_parent(parent)
 {
-
-	unique_ptr<ContainerBrick> currentContainer = nullptr;
-	for each (Catrobat_Player::NativeComponent::IBrick^ brick in script->Bricks)
-	{
-		std::list<std::unique_ptr<Brick>> *usedList;
-		if (currentContainer != nullptr)
-		{
-			usedList = currentContainer->ListPointer();
-		}
-		else
-		{
-			usedList = &m_bricks;
-		}
+    vector<unique_ptr<ContainerBrick>> currentContainers;
+    for each (Catrobat_Player::NativeComponent::IBrick^ brick in script->Bricks)
+    {
+        std::list<std::unique_ptr<Brick>> *usedList;
+        if (!currentContainers.empty())
+        {
+            usedList = currentContainers.back()->ListPointer();
+        }
+        else
+        {
+            usedList = &m_bricks;
+        }
 
 #pragma region ContainerBricks
-		auto foreverBrick = dynamic_cast<Catrobat_Player::NativeComponent::IForeverBrick^>(brick);
-		if (foreverBrick)
-		{
-			currentContainer = make_unique<ForeverBrick>(foreverBrick, this);
-			continue;
-		}
+        auto foreverBrick = dynamic_cast<Catrobat_Player::NativeComponent::IForeverBrick^>(brick);
+        if (foreverBrick)
+        {
+            unique_ptr<ContainerBrick> currentContainer = make_unique<ForeverBrick>(foreverBrick, this);
+            currentContainers.push_back(move(currentContainer));
+            continue;
+        }
 
-		auto foreverEndBrick = dynamic_cast<Catrobat_Player::NativeComponent::IForeverEndBrick^>(brick);
-		if (foreverEndBrick)
-		{
-			m_bricks.push_back(std::unique_ptr<Brick>(move(currentContainer)));
-			currentContainer = nullptr;
-			continue;
-		}
+        auto foreverEndBrick = dynamic_cast<Catrobat_Player::NativeComponent::IForeverEndBrick^>(brick);
+        if (foreverEndBrick)
+        {
+            if (currentContainers.size() == 1)
+            {
+                m_bricks.push_back(std::unique_ptr<Brick>(move(currentContainers.back())));
+            }
+            else
+            {
+                currentContainers.at(currentContainers.size() - 2)->ListPointer()->push_back(std::unique_ptr<Brick>(move(currentContainers.back())));
+            }
+            currentContainers.pop_back();
+            continue;
+        }
 
-		auto ifBrick = dynamic_cast<Catrobat_Player::NativeComponent::IIfBrick^>(brick);
-		if (ifBrick)
-		{
-			currentContainer = make_unique<IfBrick>(ifBrick, this);
-			continue;
-		}
+        auto ifBrick = dynamic_cast<Catrobat_Player::NativeComponent::IIfBrick^>(brick);
+        if (ifBrick)
+        {
+            unique_ptr<ContainerBrick> currentContainer = make_unique<IfBrick>(ifBrick, this);
+            currentContainers.push_back(move(currentContainer));
+            continue;
+        }
 
-		auto elseBrick = dynamic_cast<Catrobat_Player::NativeComponent::IElseBrick^>(brick);
-		if (elseBrick)
-		{
-			dynamic_cast<IfBrick&>(*currentContainer).ElseMode();
-			continue;
-		}
+        auto elseBrick = dynamic_cast<Catrobat_Player::NativeComponent::IElseBrick^>(brick);
+        if (elseBrick)
+        {
+            dynamic_cast<IfBrick&>(*currentContainers.back()).ElseMode();
+            continue;
+        }
 
-		auto ifEndBrick = dynamic_cast<Catrobat_Player::NativeComponent::IIfEndBrick^>(brick);
-		if (ifEndBrick)
-		{
-			m_bricks.push_back(std::unique_ptr<Brick>(move(currentContainer)));
-			currentContainer = nullptr;
-			continue;
-		}
+        auto ifEndBrick = dynamic_cast<Catrobat_Player::NativeComponent::IIfEndBrick^>(brick);
+        if (ifEndBrick)
+        {
+            if (currentContainers.size() == 1)
+            {
+                m_bricks.push_back(std::unique_ptr<Brick>(move(currentContainers.back())));
+            }
+            else
+            {
+                currentContainers.at(currentContainers.size() - 2)->ListPointer()->push_back(std::unique_ptr<Brick>(move(currentContainers.back())));
+            }
+            currentContainers.pop_back();
+            continue;
+        }
 
-		auto repeatBrick = dynamic_cast<Catrobat_Player::NativeComponent::IRepeatBrick^>(brick);
-		if (repeatBrick)
-		{
-			currentContainer = make_unique<RepeatBrick>(repeatBrick, this);
-			continue;
-		}
+        auto repeatBrick = dynamic_cast<Catrobat_Player::NativeComponent::IRepeatBrick^>(brick);
+        if (repeatBrick)
+        {
+            unique_ptr<ContainerBrick> currentContainer = make_unique<RepeatBrick>(repeatBrick, this);
+            currentContainers.push_back(move(currentContainer));
+            continue;
+        }
 
-		auto repeatEndBrick = dynamic_cast<Catrobat_Player::NativeComponent::IRepeatEndBrick^>(brick);
-		if (repeatEndBrick)
-		{
-			m_bricks.push_back(std::unique_ptr<Brick>(move(currentContainer)));
-			currentContainer = nullptr;
-			continue;
-		}
+        auto repeatEndBrick = dynamic_cast<Catrobat_Player::NativeComponent::IRepeatEndBrick^>(brick);
+        if (repeatEndBrick)
+        {
+            if (currentContainers.size() == 1)
+            {
+                m_bricks.push_back(std::unique_ptr<Brick>(move(currentContainers.back())));
+            }
+            else
+            {
+                currentContainers.at(currentContainers.size() - 2)->ListPointer()->push_back(std::unique_ptr<Brick>(move(currentContainers.back())));
+            }
+            currentContainers.pop_back();
+            continue;
+        }
 #pragma endregion
 
 		auto turnRightBrick = dynamic_cast<Catrobat_Player::NativeComponent::ITurnRightBrick^>(brick);
