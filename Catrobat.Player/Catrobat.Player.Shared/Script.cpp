@@ -362,11 +362,16 @@ Script::Script(TypeOfScript scriptType, Object* parent, Catrobat_Player::NativeC
 
 Script::~Script()
 {
+    // HACK: ~ is not called for bricks.
     for each (auto &brick in m_bricks)
     {
-        auto loop_brick = dynamic_cast<ForeverBrick*>(brick.get());
-        if (loop_brick != nullptr) {
-            loop_brick->Stop();
+        auto foreverBrick = dynamic_cast<ForeverBrick*>(brick.get());
+        if (foreverBrick != nullptr) {
+            foreverBrick->Stop();
+        }
+        auto repeatBrick = dynamic_cast<RepeatBrick*>(brick.get());
+        if (repeatBrick != nullptr) {
+            repeatBrick->Stop();
         }
     }
 }

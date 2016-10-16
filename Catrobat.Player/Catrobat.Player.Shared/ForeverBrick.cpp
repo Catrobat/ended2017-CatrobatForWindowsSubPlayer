@@ -28,10 +28,9 @@ void ForeverBrick::Execute()
     m_cv.notify_one();
 }
 
-void ForeverBrick::Stop() 
+void ForeverBrick::Stop()
 {
     m_stop = true;
     std::unique_lock<std::mutex> lk(m_mutex);
     m_cv.wait(lk);
-
 }

@@ -9,16 +9,16 @@
 
 namespace ProjectStructure
 {
-	class ForeverBrick :
-		public ContainerBrick
-	{
-	public:
-		ForeverBrick(Catrobat_Player::NativeComponent::IForeverBrick^ brick, Script* parent);
-		~ForeverBrick();
+    class ForeverBrick :
+        public ContainerBrick
+    {
+    public:
+        ForeverBrick(Catrobat_Player::NativeComponent::IForeverBrick^ brick, Script* parent);
+        ~ForeverBrick();
 
-		void Execute();
+        void Execute();
         void Stop();
-	private:
+    private:
         bool m_stop;
         std::condition_variable m_cv;
         std::mutex m_mutex;
