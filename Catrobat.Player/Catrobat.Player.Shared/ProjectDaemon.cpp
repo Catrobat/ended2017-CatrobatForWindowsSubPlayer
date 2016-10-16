@@ -80,3 +80,8 @@ bool ProjectDaemon::RestartProject()
 	m_project.reset();
 	return CreateNativeProject(m_projectName);
 }
+
+void ProjectDaemon::DisposeProject()
+{
+    m_project.reset();
+}

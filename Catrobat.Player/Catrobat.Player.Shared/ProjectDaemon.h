@@ -18,6 +18,7 @@ namespace ProjectStructure
 		bool CreateNativeProject(Platform::String^ projectName);
 		bool RestartProject();
 		void ApplyDesiredRenderTargetSizeFromProject();
+        void DisposeProject();
 
 	private:
 		ProjectDaemon();
