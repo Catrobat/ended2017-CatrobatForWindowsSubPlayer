@@ -42,6 +42,7 @@ namespace Catrobat_Player
 	{
 		// Deregister device notification
 		m_deviceResources->RegisterDeviceNotify(nullptr);
+        ProjectDaemon::Instance()->DisposeProject();
 	}
 
 	/// Initialize Project loading and parsing

@@ -362,6 +362,13 @@ Script::Script(TypeOfScript scriptType, Object* parent, Catrobat_Player::NativeC
 
 Script::~Script()
 {
+    for each (auto &brick in m_bricks)
+    {
+        auto loop_brick = dynamic_cast<ForeverBrick*>(brick.get());
+        if (loop_brick != nullptr) {
+            loop_brick->Stop();
+        }
+    }
 }
 
 void Script::AddBrick(unique_ptr<Brick> brick)
