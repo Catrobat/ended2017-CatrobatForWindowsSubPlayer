@@ -6,13 +6,13 @@
 
 namespace ProjectStructure
 {
-	class WaitBrick :
-		public Brick
-	{
-	public:
-		WaitBrick(Catrobat_Player::NativeComponent::IWaitBrick^ brick, Script* parent);
-		void Execute();
-	private:
-		std::shared_ptr<FormulaTree> m_timeToWaitInSeconds;
-	};
+    class WaitBrick :
+        public Brick
+    {
+    public:
+        WaitBrick(Catrobat_Player::NativeComponent::IWaitBrick^ brick, Script* parent);
+        void Execute();
+    private:
+        std::shared_ptr<FormulaTree> m_timeToWaitInSeconds;
+    };
 }

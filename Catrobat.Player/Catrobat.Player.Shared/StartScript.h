@@ -5,11 +5,11 @@
 
 namespace ProjectStructure
 {
-	class StartScript :
-		public Script
-	{
-	public:
-		StartScript(Catrobat_Player::NativeComponent::IStartScript^ script, Object* parent);
-		~StartScript();
-	};
+    class StartScript :
+        public Script
+    {
+    public:
+        StartScript(Catrobat_Player::NativeComponent::IStartScript^ script, Object* parent);
+        ~StartScript();
+    };
 }

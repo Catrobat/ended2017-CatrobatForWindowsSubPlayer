@@ -8,8 +8,8 @@ namespace Catrobat_Player
     {
         public interface class IVibrationBrick : public IBrick
         {
-            public:
-                virtual property IFormulaTree^ VibrateDuration;
+        public:
+            virtual property IFormulaTree^ VibrateDuration;
         };
     }
 }

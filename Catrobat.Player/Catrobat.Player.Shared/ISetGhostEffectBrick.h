@@ -5,12 +5,12 @@
 
 namespace Catrobat_Player
 {
-	namespace NativeComponent
-	{
-		public interface class ISetGhostEffectBrick : public IBrick
-		{
-		public:
-			virtual property IFormulaTree^ Transparency;
-		};
-	}
+    namespace NativeComponent
+    {
+        public interface class ISetGhostEffectBrick : public IBrick
+        {
+        public:
+            virtual property IFormulaTree^ Transparency;
+        };
+    }
 }

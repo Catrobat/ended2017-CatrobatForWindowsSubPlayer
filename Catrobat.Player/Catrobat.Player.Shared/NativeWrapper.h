@@ -4,14 +4,14 @@
 
 namespace Catrobat_Player
 {
-	namespace NativeComponent
-	{
-		public ref class NativeWrapper sealed
-		{
-		public:
-			static void SetProject(IProject^ project);
-		};
+    namespace NativeComponent
+    {
+        public ref class NativeWrapper sealed
+        {
+        public:
+            static void SetProject(IProject^ project);
+        };
 
-	}
+    }
 }
 

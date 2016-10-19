@@ -142,7 +142,7 @@ namespace Constants
     };
 
     namespace XAMLPage
-	{
+    {
         static const int      BtnAxisPosition                    =       3;
         static const wchar_t* GridAxesName                       =       L"GridAxes";
         static const wchar_t* GridAxesXRightName                 =       L"GridAxesXRight";
@@ -150,14 +150,14 @@ namespace Constants
         static const wchar_t* GridAxesYTopName                   =       L"GridAxesYTop";
         static const wchar_t* GridAxesYBottomName                =       L"GridAxesYBottom";
         static const wchar_t* SwapChainPanelName                 =       L"SwapChainPanel";
-	};
+    };
 
-	namespace Sound
-	{
+    namespace Sound
+    {
 		// Little-endian, therefore backwards spelled
-		static const uint32 fourccDATA							 =		 'atad'; // "data" chunk FOURCC
-		static const uint32 fourccFMT							 =		 ' tmf'; // "fmt" chunk FOURCC
-		static const uint32 fourccRIFF							 =		 'FFIR'; // "RIFF" chunk FOURCC
-		static const uint32 fourccWAVE							 =		 'EVAW'; // File type
-	};
+        static const uint32 fourccDATA							 =		 'atad'; // "data" chunk FOURCC
+        static const uint32 fourccFMT							 =		 ' tmf'; // "fmt" chunk FOURCC
+        static const uint32 fourccRIFF							 =		 'FFIR'; // "RIFF" chunk FOURCC
+        static const uint32 fourccWAVE							 =		 'EVAW'; // File type
+    };
 };

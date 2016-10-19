@@ -5,12 +5,12 @@
 
 namespace Catrobat_Player
 {
-	namespace NativeComponent
-	{
-		public interface class IMoveNStepsBrick : public IBrick
-		{
-		public:
-			virtual property IFormulaTree^ Steps;
-		};
-	}
+    namespace NativeComponent
+    {
+        public interface class IMoveNStepsBrick : public IBrick
+        {
+        public:
+            virtual property IFormulaTree^ Steps;
+        };
+    }
 }

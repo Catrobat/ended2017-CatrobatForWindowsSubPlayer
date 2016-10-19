@@ -13,8 +13,8 @@ namespace Catrobat_Player
         Catrobat_PlayerAdapter();
         virtual ~Catrobat_PlayerAdapter();
 
-        void InitPlayer(Windows::UI::Xaml::Controls::Page^ playerPage, 
-                        Platform::String^ projectName);
+        void InitPlayer(Windows::UI::Xaml::Controls::Page^ playerPage,
+            Platform::String^ projectName);
 
         void SaveInternalState(Windows::Foundation::Collections::IPropertySet^ state);
         void LoadInternalState(Windows::Foundation::Collections::IPropertySet^ state);
@@ -31,21 +31,21 @@ namespace Catrobat_Player
 
     private:
         // Window event handlers
-        void OnVisibilityChanged(Windows::UI::Core::CoreWindow^ sender, 
+        void OnVisibilityChanged(Windows::UI::Core::CoreWindow^ sender,
             Windows::UI::Core::VisibilityChangedEventArgs^ args);
 
         // DisplayInformation event handlers
-        void OnDpiChanged(Windows::Graphics::Display::DisplayInformation^ sender, 
+        void OnDpiChanged(Windows::Graphics::Display::DisplayInformation^ sender,
             Platform::Object^ args);
-        void OnOrientationChanged(Windows::Graphics::Display::DisplayInformation^ sender, 
+        void OnOrientationChanged(Windows::Graphics::Display::DisplayInformation^ sender,
             Platform::Object^ args);
-        void OnDisplayContentsInvalidated(Windows::Graphics::Display::DisplayInformation^ sender, 
+        void OnDisplayContentsInvalidated(Windows::Graphics::Display::DisplayInformation^ sender,
             Platform::Object^ args);
 
         // Other event handlers
-        void OnCompositionScaleChanged(Windows::UI::Xaml::Controls::SwapChainPanel^ sender, 
+        void OnCompositionScaleChanged(Windows::UI::Xaml::Controls::SwapChainPanel^ sender,
             Object^ args);
-        void OnSwapChainPanelSizeChanged(Platform::Object^ sender, 
+        void OnSwapChainPanelSizeChanged(Platform::Object^ sender,
             Windows::UI::Xaml::SizeChangedEventArgs^ e);
 
         // Independent input handling functions - private

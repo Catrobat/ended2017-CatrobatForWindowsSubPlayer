@@ -9,10 +9,10 @@ public:
 
 private:
 
-	Windows::Devices::Sensors::Compass^ m_compass;
+    Windows::Devices::Sensors::Compass^ m_compass;
     bool Init();
 
-	bool m_sensorIsRunningOnDevice;
+    bool m_sensorIsRunningOnDevice;
 
 };
 

@@ -12,7 +12,7 @@ namespace ProjectStructure
         VibrationBrick(Catrobat_Player::NativeComponent::IVibrationBrick^ brick, Script* parent);
         void Execute();
 
-    private: 
+    private:
         std::shared_ptr<FormulaTree> m_vibrateDuration;
     };
 }

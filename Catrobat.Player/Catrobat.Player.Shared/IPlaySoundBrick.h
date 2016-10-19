@@ -5,13 +5,13 @@
 
 namespace Catrobat_Player
 {
-	namespace NativeComponent
-	{
-		public interface class IPlaySoundBrick : public IBrick
-		{
-		public:
-			virtual property Platform::String^ FileName;
-			virtual property Platform::String^ Name;
-		};
-	}
+    namespace NativeComponent
+    {
+        public interface class IPlaySoundBrick : public IBrick
+        {
+        public:
+            virtual property Platform::String^ FileName;
+            virtual property Platform::String^ Name;
+        };
+    }
 }

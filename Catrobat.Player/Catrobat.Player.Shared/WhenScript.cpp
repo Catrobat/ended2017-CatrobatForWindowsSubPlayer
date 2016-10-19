@@ -11,12 +11,12 @@ using namespace std;
 using namespace ProjectStructure;
 
 WhenScript::WhenScript(Catrobat_Player::NativeComponent::IWhenScript^ script, Object* parent) :
-	Script(TypeOfScript::WhenScript, parent, script)
+    Script(TypeOfScript::WhenScript, parent, script)
 {
-	if (Helper::StdString(script->Action) == "Tapped")
-	{
-		m_action = Action::Tapped;
-	}
+    if (Helper::StdString(script->Action) == "Tapped")
+    {
+        m_action = Action::Tapped;
+    }
 }
 
 WhenScript::~WhenScript()
@@ -25,5 +25,5 @@ WhenScript::~WhenScript()
 
 int WhenScript::GetAction()
 {
-	return m_action;
+    return m_action;
 }

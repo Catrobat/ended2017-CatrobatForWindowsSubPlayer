@@ -5,11 +5,11 @@
 
 namespace ProjectStructure
 {
-	class ChangeVariableBrick
-		: public VariableManagementBrick
-	{
-	public:
-		ChangeVariableBrick(Catrobat_Player::NativeComponent::IChangeVariableBrick^ brick, Script* parent);
-		void Execute();
-	};
+    class ChangeVariableBrick
+        : public VariableManagementBrick
+    {
+    public:
+        ChangeVariableBrick(Catrobat_Player::NativeComponent::IChangeVariableBrick^ brick, Script* parent);
+        void Execute();
+    };
 }

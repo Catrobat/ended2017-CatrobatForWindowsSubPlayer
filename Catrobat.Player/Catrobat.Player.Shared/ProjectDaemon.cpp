@@ -24,12 +24,12 @@ ProjectDaemon *ProjectDaemon::m_instance = NULL;
 
 ProjectDaemon *ProjectDaemon::Instance()
 {
-	if (!m_instance)
-	{
-		m_instance = new ProjectDaemon();
-	}
+    if (!m_instance)
+    {
+        m_instance = new ProjectDaemon();
+    }
 
-	return m_instance;
+    return m_instance;
 }
 
 ProjectDaemon::ProjectDaemon()
@@ -40,45 +40,45 @@ ProjectDaemon::ProjectDaemon()
 Catrobat_Player::NativeComponent::IProject^ ProjectDaemon::CSProject;
 void ProjectDaemon::SetProject(Catrobat_Player::NativeComponent::IProject^ project)
 {
-	CSProject = project;
+    CSProject = project;
 }
 
 string ProjectDaemon::GetProjectPath()
 {
 
-	return m_projectPath;
+    return m_projectPath;
 }
 
 unique_ptr<Project> const & ProjectDaemon::GetProject()
 {
-	return m_project;
+    return m_project;
 }
 
 bool ProjectDaemon::CreateNativeProject(String^ projectName)
 {
-	try
-	{
-		if (CSProject != nullptr)
-		{
-			m_projectName = projectName;
-			m_project = make_unique<Project>(CSProject);
-			if (m_project == nullptr) return false;
-			m_projectPath = Helper::StdString(Windows::Storage::ApplicationData::Current->LocalFolder->Path) +
-				"\\Projects\\" + Helper::StdString(projectName);
-			return true;
-		}
-		return false;
-	}
-	catch (Platform::Exception^ e)
-	{
-		return false;
-	}
+    try
+    {
+        if (CSProject != nullptr)
+        {
+            m_projectName = projectName;
+            m_project = make_unique<Project>(CSProject);
+            if (m_project == nullptr) return false;
+            m_projectPath = Helper::StdString(Windows::Storage::ApplicationData::Current->LocalFolder->Path) +
+                "\\Projects\\" + Helper::StdString(projectName);
+            return true;
+        }
+        return false;
+    }
+    catch (Platform::Exception^ e)
+    {
+        return false;
+    }
 }
 
 bool ProjectDaemon::RestartProject()
 {
-	m_project.reset();
-	return CreateNativeProject(m_projectName);
+    m_project.reset();
+    return CreateNativeProject(m_projectName);
 }
 
 void ProjectDaemon::DisposeProject()

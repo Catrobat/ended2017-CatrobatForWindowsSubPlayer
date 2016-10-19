@@ -3,19 +3,19 @@
 class AccelerometerProvider
 {
 public:
-	AccelerometerProvider();
-	virtual ~AccelerometerProvider();
+    AccelerometerProvider();
+    virtual ~AccelerometerProvider();
 
-	double GetX();
-	double GetY();
-	double GetZ();
+    double GetX();
+    double GetY();
+    double GetZ();
 
 private:
-	Windows::Devices::Sensors::Accelerometer^ m_accelerometer;
+    Windows::Devices::Sensors::Accelerometer^ m_accelerometer;
 
-	bool Init();
+    bool Init();
 
-	bool m_sensorIsRunningOnDevice;
+    bool m_sensorIsRunningOnDevice;
 
 };
 

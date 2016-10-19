@@ -24,7 +24,7 @@ using namespace Microsoft::WRL;
 // release and zero out a possible NULL pointer. note this will
 // do the release on a temp copy to avoid reentrancy issues that can result from
 // callbacks durring the release
-template <class T> void SafeRelease( __deref_inout_opt T **ppT )
+template <class T> void SafeRelease(__deref_inout_opt T **ppT)
 {
     T *pTTemp = *ppT; // temp copy
     *ppT = nullptr;   // zero the input
@@ -35,12 +35,12 @@ template <class T> void SafeRelease( __deref_inout_opt T **ppT )
 }
 
 // Exception Helper Method
-inline void ThrowIfFailed( HRESULT hr )
+inline void ThrowIfFailed(HRESULT hr)
 {
-    if (FAILED( hr ))
+    if (FAILED(hr))
     {
         // Set a breakpoint on this line to catch API errors.
-        throw Platform::Exception::CreateException( hr );
+        throw Platform::Exception::CreateException(hr);
     }
 }
 
@@ -113,23 +113,23 @@ protected: \
 // CAsyncState
 //
 // Used to maintain state during MF Work Item callbacks
-class CAsyncState : 
+class CAsyncState :
     public RuntimeClass<RuntimeClassFlags<ClassicCom>, IUnknown>
-{  
-public:  
-    CAsyncState( Platform::Array<int,1>^ data, UINT32 size ) :
-        m_Data(data), 
+{
+public:
+    CAsyncState(Platform::Array<int, 1>^ data, UINT32 size) :
+        m_Data(data),
         m_Size(size)
-    {  
-    };  
+    {
+    };
 
 public:
-    Platform::Array<int,1>^  m_Data;
+    Platform::Array<int, 1>^  m_Data;
     UINT32                   m_Size;
 
 private:
     virtual ~CAsyncState() {};
-}; 
+};
 
 struct RenderBuffer
 {
@@ -141,14 +141,14 @@ struct RenderBuffer
     RenderBuffer() :
         BufferSize(0),
         BytesFilled(0),
-        Buffer( nullptr ),
-        Next( nullptr )
+        Buffer(nullptr),
+        Next(nullptr)
     {
     }
 
     ~RenderBuffer()
     {
-        SAFE_ARRAYDELETE( Buffer );
+        SAFE_ARRAYDELETE(Buffer);
     }
 };
 
@@ -164,20 +164,20 @@ enum RenderSampleType
 //
 //  Determine IEEE Float or PCM samples based on media type
 //
-inline RenderSampleType CalculateMixFormatType( WAVEFORMATEX *wfx )
+inline RenderSampleType CalculateMixFormatType(WAVEFORMATEX *wfx)
 {
-    if ( (wfx->wFormatTag == WAVE_FORMAT_PCM) ||
-         (  (wfx->wFormatTag == WAVE_FORMAT_EXTENSIBLE) &&
-            (reinterpret_cast<WAVEFORMATEXTENSIBLE *>(wfx)->SubFormat == KSDATAFORMAT_SUBTYPE_PCM) ) )
+    if ((wfx->wFormatTag == WAVE_FORMAT_PCM) ||
+        ((wfx->wFormatTag == WAVE_FORMAT_EXTENSIBLE) &&
+        (reinterpret_cast<WAVEFORMATEXTENSIBLE *>(wfx)->SubFormat == KSDATAFORMAT_SUBTYPE_PCM)))
     {
         if (wfx->wBitsPerSample == 16)
         {
             return RenderSampleType::SampleType16BitPCM;
         }
     }
-    else if ( (wfx->wFormatTag == WAVE_FORMAT_IEEE_FLOAT) ||
-              ( (wfx->wFormatTag == WAVE_FORMAT_EXTENSIBLE) &&
-                (reinterpret_cast<WAVEFORMATEXTENSIBLE *>(wfx)->SubFormat == KSDATAFORMAT_SUBTYPE_IEEE_FLOAT) ) )
+    else if ((wfx->wFormatTag == WAVE_FORMAT_IEEE_FLOAT) ||
+        ((wfx->wFormatTag == WAVE_FORMAT_EXTENSIBLE) &&
+        (reinterpret_cast<WAVEFORMATEXTENSIBLE *>(wfx)->SubFormat == KSDATAFORMAT_SUBTYPE_IEEE_FLOAT)))
     {
         return RenderSampleType::SampleTypeFloat;
     }

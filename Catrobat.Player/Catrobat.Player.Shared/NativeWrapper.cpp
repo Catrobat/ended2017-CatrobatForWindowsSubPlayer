@@ -7,5 +7,5 @@ using namespace Catrobat_Player::NativeComponent;
 
 void NativeWrapper::SetProject(IProject^ project)
 {
-	ProjectDaemon::SetProject(project);
+    ProjectDaemon::SetProject(project);
 }

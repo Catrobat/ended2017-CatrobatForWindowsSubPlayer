@@ -5,12 +5,12 @@
 
 namespace Catrobat_Player
 {
-	namespace NativeComponent
-	{
-		public interface class IBroadcastBrick : public IBrick
-		{
-		public:
-			virtual property Platform::String^ BroadcastMessage;
-		};
-	}
+    namespace NativeComponent
+    {
+        public interface class IBroadcastBrick : public IBrick
+        {
+        public:
+            virtual property Platform::String^ BroadcastMessage;
+        };
+    }
 }

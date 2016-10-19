@@ -12,16 +12,16 @@ using namespace Windows::Foundation;
 using namespace ProjectStructure;
 
 Brick::Brick(TypeOfBrick brickType, Script* parent) :
-	m_brickType(brickType), m_parent(parent)
+    m_brickType(brickType), m_parent(parent)
 {
 }
 
 Brick::TypeOfBrick Brick::GetBrickType()
 {
-	return m_brickType;
+    return m_brickType;
 }
 
 Script* Brick::GetParent()
 {
-	return m_parent;
+    return m_parent;
 }

@@ -4,12 +4,12 @@
 
 namespace ProjectStructure
 {
-	class NextLookBrick :
-		public Brick
-	{
-	public:
-		NextLookBrick(Script* parent);
-		void Execute();
-	};
+    class NextLookBrick :
+        public Brick
+    {
+    public:
+        NextLookBrick(Script* parent);
+        void Execute();
+    };
 
 }

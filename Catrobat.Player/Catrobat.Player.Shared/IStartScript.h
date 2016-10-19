@@ -4,10 +4,10 @@
 
 namespace Catrobat_Player
 {
-	namespace NativeComponent
-	{
-		public interface class IStartScript : public IScript
-		{
-		};
-	}
+    namespace NativeComponent
+    {
+        public interface class IStartScript : public IScript
+        {
+        };
+    }
 }

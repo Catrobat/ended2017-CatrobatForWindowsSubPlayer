@@ -5,12 +5,12 @@
 
 namespace Catrobat_Player
 {
-	namespace NativeComponent
-	{
-		public interface class IChangeYByBrick : public IBrick
-		{
-		public:
-			virtual property IFormulaTree^ OffsetY;
-		};
-	}
+    namespace NativeComponent
+    {
+        public interface class IChangeYByBrick : public IBrick
+        {
+        public:
+            virtual property IFormulaTree^ OffsetY;
+        };
+    }
 }

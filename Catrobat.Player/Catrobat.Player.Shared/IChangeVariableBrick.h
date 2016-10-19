@@ -5,10 +5,10 @@
 
 namespace Catrobat_Player
 {
-	namespace NativeComponent
-	{
-		public interface class IChangeVariableBrick : public IVariableManagementBrick
-		{
-		};
-	}
+    namespace NativeComponent
+    {
+        public interface class IChangeVariableBrick : public IVariableManagementBrick
+        {
+        };
+    }
 }

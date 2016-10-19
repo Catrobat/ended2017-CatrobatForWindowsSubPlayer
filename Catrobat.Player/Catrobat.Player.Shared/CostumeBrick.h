@@ -5,17 +5,17 @@
 
 namespace ProjectStructure
 {
-	class CostumeBrick :
-		public Brick
-	{
-	public:
-		CostumeBrick(Catrobat_Player::NativeComponent::ICostumeBrick^ brick, Script* parent);
-		CostumeBrick(Script* parent);
+    class CostumeBrick :
+        public Brick
+    {
+    public:
+        CostumeBrick(Catrobat_Player::NativeComponent::ICostumeBrick^ brick, Script* parent);
+        CostumeBrick(Script* parent);
 
-		void Execute();
-		int GetIndex();
-	private:
-		std::string m_costumeDataReference;
-		int m_index;
-	};
+        void Execute();
+        int GetIndex();
+    private:
+        std::string m_costumeDataReference;
+        int m_index;
+    };
 }

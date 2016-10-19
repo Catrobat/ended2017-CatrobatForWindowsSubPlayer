@@ -22,8 +22,8 @@ namespace Catrobat_Player
     //----------------------------------------------------------------------------------------------
 
     Catrobat_PlayerAdapter::Catrobat_PlayerAdapter() :
-    m_windowVisible(true),
-    m_coreInput(nullptr)
+        m_windowVisible(true),
+        m_coreInput(nullptr)
     {
 
     }
@@ -44,36 +44,36 @@ namespace Catrobat_Player
 
         // Get the SwapChainPanel of the XAML page
         SwapChainPanel^ swapChainPanel = Catrobat_PlayerMain::FindChildControl<SwapChainPanel>(
-            (DependencyObject^)playerPage->Content, 
+            (DependencyObject^)playerPage->Content,
             Constants::XAMLPage::SwapChainPanelName);
 
         // Register event handlers for page lifecycle
         CoreWindow^ window = Window::Current->CoreWindow;
 
-        window->VisibilityChanged += 
+        window->VisibilityChanged +=
             ref new TypedEventHandler<CoreWindow^, VisibilityChangedEventArgs^>
             (this, &Catrobat_PlayerAdapter::OnVisibilityChanged);
 
         DisplayInformation^ currentDisplayInformation = DisplayInformation::GetForCurrentView();
 
-        currentDisplayInformation->DpiChanged += 
+        currentDisplayInformation->DpiChanged +=
             ref new TypedEventHandler<DisplayInformation^, Object^>
             (this, &Catrobat_PlayerAdapter::OnDpiChanged);
 
-        currentDisplayInformation->OrientationChanged += 
+        currentDisplayInformation->OrientationChanged +=
             ref new TypedEventHandler<DisplayInformation^, Object^>
             (this, &Catrobat_PlayerAdapter::OnOrientationChanged);
 
-        DisplayInformation::DisplayContentsInvalidated += 
+        DisplayInformation::DisplayContentsInvalidated +=
             ref new TypedEventHandler<DisplayInformation^, Object^>
             (this, &Catrobat_PlayerAdapter::OnDisplayContentsInvalidated);
-        
-        swapChainPanel->CompositionScaleChanged += 
+
+        swapChainPanel->CompositionScaleChanged +=
             ref new TypedEventHandler<SwapChainPanel^, Object^>
             (this, &Catrobat_PlayerAdapter::OnCompositionScaleChanged);
 
         swapChainPanel->SizeChanged += ref new SizeChangedEventHandler
-            (this, &Catrobat_PlayerAdapter::OnSwapChainPanelSizeChanged);
+        (this, &Catrobat_PlayerAdapter::OnSwapChainPanelSizeChanged);
 
         // At this point we have access to the device. 
         // We can create the device-dependent resources.
@@ -89,7 +89,7 @@ namespace Catrobat_Player
                 CoreInputDeviceTypes::Mouse |
                 CoreInputDeviceTypes::Touch |
                 CoreInputDeviceTypes::Pen
-                );
+            );
 
             // Register for pointer events, which will be raised on the background thread
             m_coreInput->PointerPressed += ref new TypedEventHandler<Object^, PointerEventArgs^>
@@ -100,10 +100,10 @@ namespace Catrobat_Player
         });
 
         // Run task on a dedicated high priority background thread
-        m_inputLoopWorker = ThreadPool::RunAsync(workItemHandler, WorkItemPriority::High, 
-            WorkItemOptions::TimeSliced); 
+        m_inputLoopWorker = ThreadPool::RunAsync(workItemHandler, WorkItemPriority::High,
+            WorkItemOptions::TimeSliced);
 
-        m_main = std::unique_ptr<Catrobat_PlayerMain>(new Catrobat_PlayerMain(m_deviceResources, 
+        m_main = std::unique_ptr<Catrobat_PlayerMain>(new Catrobat_PlayerMain(m_deviceResources,
             playerPage, projectName));
     }
 
@@ -132,7 +132,7 @@ namespace Catrobat_Player
 
         // TODO review, especially check state handling --> maybe create a function for this inside
         // the main class of the player
-        
+
         // Start rendering when the app is resumed.
         m_main->StartRenderLoop();
     }
@@ -140,7 +140,7 @@ namespace Catrobat_Player
     //----------------------------------------------------------------------------------------------
     // Window event handlers
 
-    void Catrobat_PlayerAdapter::OnVisibilityChanged(CoreWindow^ sender, 
+    void Catrobat_PlayerAdapter::OnVisibilityChanged(CoreWindow^ sender,
         VisibilityChangedEventArgs^ args)
     {
         // TODO review, especially check state handling --> maybe create a function for this inside
@@ -177,7 +177,7 @@ namespace Catrobat_Player
 
     //----------------------------------------------------------------------------------------------
 
-    void Catrobat_PlayerAdapter::OnDisplayContentsInvalidated(DisplayInformation^ sender, 
+    void Catrobat_PlayerAdapter::OnDisplayContentsInvalidated(DisplayInformation^ sender,
         Object^ args)
     {
         critical_section::scoped_lock lock(m_main->GetCriticalSection());
@@ -190,7 +190,7 @@ namespace Catrobat_Player
     void Catrobat_PlayerAdapter::OnCompositionScaleChanged(SwapChainPanel^ sender, Object^ args)
     {
         critical_section::scoped_lock lock(m_main->GetCriticalSection());
-        m_deviceResources->SetCompositionScale(sender->CompositionScaleX, 
+        m_deviceResources->SetCompositionScale(sender->CompositionScaleX,
             sender->CompositionScaleY);
         m_main->CreateWindowSizeDependentResources();
     }
@@ -198,7 +198,7 @@ namespace Catrobat_Player
 
     //----------------------------------------------------------------------------------------------
 
-    void Catrobat_PlayerAdapter::OnSwapChainPanelSizeChanged(Object^ sender, 
+    void Catrobat_PlayerAdapter::OnSwapChainPanelSizeChanged(Object^ sender,
         SizeChangedEventArgs^ e)
     {
         critical_section::scoped_lock lock(m_main->GetCriticalSection());
@@ -256,5 +256,5 @@ namespace Catrobat_Player
     {
         m_main->ScreenshotButtonClicked();
     }
- 
+
 };

@@ -4,11 +4,11 @@
 
 namespace Catrobat_Player
 {
-	namespace NativeComponent
-	{
-		public interface class IScript
-		{
-			virtual property Windows::Foundation::Collections::IVector<IBrick^>^ Bricks;
-		};
-	}
+    namespace NativeComponent
+    {
+        public interface class IScript
+        {
+            virtual property Windows::Foundation::Collections::IVector<IBrick^>^ Bricks;
+        };
+    }
 }

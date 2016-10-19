@@ -10,15 +10,15 @@
 class TextureDaemon
 {
 public:
-	static TextureDaemon *Instance();
+    static TextureDaemon *Instance();
     std::unique_ptr<CatrobatTexture> LoadTexture(const std::shared_ptr<DX::DeviceResources>& deviceResources, std::string textureKey);
 
 private:
-	TextureDaemon();
+    TextureDaemon();
     ~TextureDaemon();
     //TextureDaemon(TextureDaemon &const);
     TextureDaemon& operator=(TextureDaemon const&);
 
-	static TextureDaemon *__instance;
+    static TextureDaemon *__instance;
 };
 

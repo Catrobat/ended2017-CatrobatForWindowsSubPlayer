@@ -4,11 +4,11 @@
 
 namespace ProjectStructure
 {
-	class ShowBrick :
-		public Brick
-	{
-	public:
-		ShowBrick(Script* parent);
-		void Execute();
-	};
+    class ShowBrick :
+        public Brick
+    {
+    public:
+        ShowBrick(Script* parent);
+        void Execute();
+    };
 }

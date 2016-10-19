@@ -7,54 +7,54 @@
 
 namespace ProjectStructure
 {
-	class Script;
-	class Brick
-	{
-	public:
-		enum TypeOfBrick
-		{
-			CostumeBrick,
-			WaitBrick,
-			PlaceAtBrick,
-			SetGhostEffectBrick,
-			PlaySoundBrick,
-			TurnLeftBrick,
-			ForeverBrick,
-			HideBrick,
-			ShowBrick,
-			SetSizeToBrick,
-			ChangeSizeByBrick,
-			TurnRightBrick,
-			SetXBrick,
-			SetYBrick,
-			ChangeXByBrick,
-			ChangeYByBrick,
-			GlideToBrick,
-			MoveNStepsBrick,
-			PointToBrick,
-			BroadcastBrick,
-			IfBrick,
-			ContainerBrick,
-			ChangeGhostEffectByBrick,
-			NextlookBrick,
-			SetVariableBrick,
+    class Script;
+    class Brick
+    {
+    public:
+        enum TypeOfBrick
+        {
+            CostumeBrick,
+            WaitBrick,
+            PlaceAtBrick,
+            SetGhostEffectBrick,
+            PlaySoundBrick,
+            TurnLeftBrick,
+            ForeverBrick,
+            HideBrick,
+            ShowBrick,
+            SetSizeToBrick,
+            ChangeSizeByBrick,
+            TurnRightBrick,
+            SetXBrick,
+            SetYBrick,
+            ChangeXByBrick,
+            ChangeYByBrick,
+            GlideToBrick,
+            MoveNStepsBrick,
+            PointToBrick,
+            BroadcastBrick,
+            IfBrick,
+            ContainerBrick,
+            ChangeGhostEffectByBrick,
+            NextlookBrick,
+            SetVariableBrick,
             VibrationBrick,
-			SetVolumeToBrick,
-			ChangeVolumeByNBrick,
+            SetVolumeToBrick,
+            ChangeVolumeByNBrick,
             StopSoundsBrick
-		};
+        };
 
-		Script* GetParent();
+        Script* GetParent();
 
-		virtual void Execute() = 0;
+        virtual void Execute() = 0;
 
-		TypeOfBrick GetBrickType();
+        TypeOfBrick GetBrickType();
 
-	protected:
-		Brick(TypeOfBrick brickType, Script* parent);
-		Script* m_parent;
+    protected:
+        Brick(TypeOfBrick brickType, Script* parent);
+        Script* m_parent;
 
-	private:
-		TypeOfBrick m_brickType;
-	};
+    private:
+        TypeOfBrick m_brickType;
+    };
 }

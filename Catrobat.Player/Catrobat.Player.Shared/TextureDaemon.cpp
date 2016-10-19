@@ -37,13 +37,13 @@ unique_ptr<CatrobatTexture> TextureDaemon::LoadTexture(const shared_ptr<DX::Devi
     IWICFormatConverter *converter = NULL;
 
     //string path is converted to LPCWSTR format
-	std::string path = ProjectDaemon::Instance()->GetProjectPath() + "\\images\\" + textureKey;
+    std::string path = ProjectDaemon::Instance()->GetProjectPath() + "\\images\\" + textureKey;
 
 #if _WINRT_DLL
-	// Code for Catrobat.Player.WindowsPhone
+    // Code for Catrobat.Player.WindowsPhone
 #elif PSAPI_VERSION
-	// Code for Catrobat.Player.WindowsPhone.Tests
-	path = textureKey;
+    // Code for Catrobat.Player.WindowsPhone.Tests
+    path = textureKey;
 #endif
 
     std::wstring stemp = std::wstring(path.begin(), path.end());
@@ -69,7 +69,7 @@ unique_ptr<CatrobatTexture> TextureDaemon::LoadTexture(const shared_ptr<DX::Devi
         WICBitmapPaletteTypeCustom);
 
     //create usable ID2D1Bitmap from WIC
-	ComPtr<ID2D1Bitmap> bitmap;
+    ComPtr<ID2D1Bitmap> bitmap;
     deviceContext->CreateBitmapFromWicBitmap(converter, NULL, bitmap.GetAddressOf());
 
     IWICBitmapFrameDecode *pIDecoderFrame = NULL;
@@ -78,8 +78,8 @@ unique_ptr<CatrobatTexture> TextureDaemon::LoadTexture(const shared_ptr<DX::Devi
     IWICBitmap *pIBitmap = NULL;
     IWICBitmapLock *pILock = NULL;
 
-    UINT uiWidth = (UINT) bitmap->GetSize().width;
-    UINT uiHeight = (UINT) bitmap->GetSize().height;
+    UINT uiWidth = (UINT)bitmap->GetSize().width;
+    UINT uiHeight = (UINT)bitmap->GetSize().height;
 
     WICRect rcLock = { 0, 0, uiWidth, uiHeight };
 
@@ -124,6 +124,6 @@ unique_ptr<CatrobatTexture> TextureDaemon::LoadTexture(const shared_ptr<DX::Devi
         }
     }
 
-	return make_unique<CatrobatTexture>(alphaMap, bitmap);
+    return make_unique<CatrobatTexture>(alphaMap, bitmap);
 }
 

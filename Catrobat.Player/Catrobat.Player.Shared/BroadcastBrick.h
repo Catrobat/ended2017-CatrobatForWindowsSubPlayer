@@ -5,14 +5,14 @@
 
 namespace ProjectStructure
 {
-	class BroadcastBrick :
-		public Brick
-	{
-	public:
-		BroadcastBrick(Catrobat_Player::NativeComponent::IBroadcastBrick^ brick, Script* parent);
-		void Execute();
+    class BroadcastBrick :
+        public Brick
+    {
+    public:
+        BroadcastBrick(Catrobat_Player::NativeComponent::IBroadcastBrick^ brick, Script* parent);
+        void Execute();
 
-	private:
-		std::string m_broadcastMessage;
-	};
+    private:
+        std::string m_broadcastMessage;
+    };
 }
