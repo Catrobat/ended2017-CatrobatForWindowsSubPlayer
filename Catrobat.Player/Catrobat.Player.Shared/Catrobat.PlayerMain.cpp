@@ -42,6 +42,7 @@ namespace Catrobat_Player
 	{
 		// Deregister device notification
 		m_deviceResources->RegisterDeviceNotify(nullptr);
+        ProjectDaemon::Instance()->DisposeProject();
 	}
 
 	/// Initialize Project loading and parsing
@@ -130,6 +131,7 @@ namespace Catrobat_Player
 	{
 		m_state = PlayerState::Pause;
 		m_renderLoopWorker->Cancel();
+        Sleep(500); // Simple workaround, m_renderLoopWorker must be finished bevor exiting StopRenderLoop
 	}
 
 	void Catrobat_PlayerMain::PointerPressed(D2D1_POINT_2F point)

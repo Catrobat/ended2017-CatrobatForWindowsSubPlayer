@@ -4,18 +4,23 @@
 #include "Object.h"
 #include "IForeverBrick.h"
 
+#include <condition_variable>
 #include <list>
 
 namespace ProjectStructure
 {
-	class ForeverBrick :
-		public ContainerBrick
-	{
-	public:
-		ForeverBrick(Catrobat_Player::NativeComponent::IForeverBrick^ brick, Script* parent);
-		~ForeverBrick();
+    class ForeverBrick :
+        public ContainerBrick
+    {
+    public:
+        ForeverBrick(Catrobat_Player::NativeComponent::IForeverBrick^ brick, Script* parent);
+        ~ForeverBrick();
 
-		void Execute();
-	private:
-	};
+        void Execute();
+        void Stop();
+    private:
+        bool m_stop;
+        std::condition_variable m_cv;
+        std::mutex m_mutex;
+    };
 }
