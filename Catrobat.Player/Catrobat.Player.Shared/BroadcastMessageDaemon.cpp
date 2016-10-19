@@ -7,20 +7,20 @@ BroadcastMessageDaemon *BroadcastMessageDaemon::__instance = NULL;
 
 BroadcastMessageDaemon::BroadcastMessageDaemon()
 {
-	m_broadcastMessageSender = ref new BroadcastMessageSender();
+    m_broadcastMessageSender = ref new BroadcastMessageSender();
 }
 
 BroadcastMessageDaemon *BroadcastMessageDaemon::Instance()
 {
-	if (!__instance)
-	{
-		__instance = new BroadcastMessageDaemon();
-	}
+    if (!__instance)
+    {
+        __instance = new BroadcastMessageDaemon();
+    }
 
-	return __instance;
+    return __instance;
 }
 
 void BroadcastMessageDaemon::Register(BroadcastMessageListener ^listener)
 {
-	m_broadcastMessageSender->Broadcast += ref new BroadcastMessageEventHandler(listener, &BroadcastMessageListener::HandleBroadcastMessage);
+    m_broadcastMessageSender->Broadcast += ref new BroadcastMessageEventHandler(listener, &BroadcastMessageListener::HandleBroadcastMessage);
 }

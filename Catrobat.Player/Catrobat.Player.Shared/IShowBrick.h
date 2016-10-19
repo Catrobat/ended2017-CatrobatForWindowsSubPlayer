@@ -5,10 +5,10 @@
 
 namespace Catrobat_Player
 {
-	namespace NativeComponent
-	{
-		public interface class IShowBrick : public IBrick
-		{
-		};
-	}
+    namespace NativeComponent
+    {
+        public interface class IShowBrick : public IBrick
+        {
+        };
+    }
 }

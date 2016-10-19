@@ -4,10 +4,10 @@
 
 namespace Catrobat_Player
 {
-	namespace NativeComponent
-	{
-		public interface class IForeverEndBrick : public IBrick
-		{
-		};
-	}
+    namespace NativeComponent
+    {
+        public interface class IForeverEndBrick : public IBrick
+        {
+        };
+    }
 }

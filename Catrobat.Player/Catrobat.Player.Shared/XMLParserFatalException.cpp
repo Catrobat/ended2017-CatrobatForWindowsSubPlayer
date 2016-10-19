@@ -9,7 +9,7 @@ XMLParserFatalException::XMLParserFatalException(std::string errorMessage)
 }
 
 XMLParserFatalException::XMLParserFatalException(void* exceptionThrownIn, std::string errorMessage)
-    :BaseException(errorMessage)
+    : BaseException(errorMessage)
 {
 
 }

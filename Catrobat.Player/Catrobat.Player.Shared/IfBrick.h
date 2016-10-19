@@ -8,26 +8,26 @@
 
 namespace ProjectStructure
 {
-	enum IfBranchType
-	{
-		If,
-		Else
-	};
+    enum IfBranchType
+    {
+        If,
+        Else
+    };
 
-	class IfBrick :
-		public ContainerBrick
-	{
-	public:
-		IfBrick(Catrobat_Player::NativeComponent::IIfBrick^ brick, Script* parent);
-		~IfBrick();
+    class IfBrick :
+        public ContainerBrick
+    {
+    public:
+        IfBrick(Catrobat_Player::NativeComponent::IIfBrick^ brick, Script* parent);
+        ~IfBrick();
 
-		void Execute();
-		std::list<std::unique_ptr<Brick>> *ListPointer() override;
+        void Execute();
+        std::list<std::unique_ptr<Brick>> *ListPointer() override;
 
-		void ElseMode();
-	private:
-		bool m_elseMode;
-		std::list<std::unique_ptr<Brick>> m_alternateBrickList;
-		std::shared_ptr<FormulaTree> m_condition;
-	};
+        void ElseMode();
+    private:
+        bool m_elseMode;
+        std::list<std::unique_ptr<Brick>> m_alternateBrickList;
+        std::shared_ptr<FormulaTree> m_condition;
+    };
 }

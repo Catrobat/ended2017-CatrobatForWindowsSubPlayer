@@ -10,25 +10,25 @@
 
 namespace ProjectStructure
 {
-	class Project
-	{
-	public:
-		Project(Catrobat_Player::NativeComponent::IProject^ project);
-		~Project();
+    class Project
+    {
+    public:
+        Project(Catrobat_Player::NativeComponent::IProject^ project);
+        ~Project();
 
-		void CheckProjectScreenSize();
-		void SetupWindowSizeDependentResources(const std::shared_ptr<DX::DeviceResources>& deviceResources);
-		void LoadTextures(const std::shared_ptr<DX::DeviceResources>& deviceResources);
-		void StartUp();
-		void Render(const std::shared_ptr<DX::DeviceResources>& deviceResources);
-		std::shared_ptr<UserVariable> GetVariable(std::string name);
+        void CheckProjectScreenSize();
+        void SetupWindowSizeDependentResources(const std::shared_ptr<DX::DeviceResources>& deviceResources);
+        void LoadTextures(const std::shared_ptr<DX::DeviceResources>& deviceResources);
+        void StartUp();
+        void Render(const std::shared_ptr<DX::DeviceResources>& deviceResources);
+        std::shared_ptr<UserVariable> GetVariable(std::string name);
 
-		std::unique_ptr<Header> const & GetHeader() { return m_header; }
-		std::map<std::string, std::shared_ptr<Object> > GetObjectList() { return m_objectList; }
+        std::unique_ptr<Header> const & GetHeader() { return m_header; }
+        std::map<std::string, std::shared_ptr<Object> > GetObjectList() { return m_objectList; }
 
-	private:
-		std::unique_ptr<Header> m_header;
-		std::map<std::string, std::shared_ptr<Object> > m_objectList;
-		std::map<std::string, std::shared_ptr<UserVariable> > m_variableList;
-	};
+    private:
+        std::unique_ptr<Header> m_header;
+        std::map<std::string, std::shared_ptr<Object> > m_objectList;
+        std::map<std::string, std::shared_ptr<UserVariable> > m_variableList;
+    };
 }

@@ -5,10 +5,10 @@
 
 namespace ProjectStructure
 {
-	class StopSoundsBrick : public Brick
-	{
-		public:
-			StopSoundsBrick(Catrobat_Player::NativeComponent::IStopSoundsBrick^ brick, Script* parent);
-			void Execute();
-	};
+    class StopSoundsBrick : public Brick
+    {
+    public:
+        StopSoundsBrick(Catrobat_Player::NativeComponent::IStopSoundsBrick^ brick, Script* parent);
+        void Execute();
+    };
 }

@@ -5,12 +5,12 @@
 
 namespace Catrobat_Player
 {
-	namespace NativeComponent
-	{
-		public interface class ISetSizeToBrick : public IBrick
-		{
-		public:
-			virtual property IFormulaTree^ Scale;
-		};
-	}
+    namespace NativeComponent
+    {
+        public interface class ISetSizeToBrick : public IBrick
+        {
+        public:
+            virtual property IFormulaTree^ Scale;
+        };
+    }
 }

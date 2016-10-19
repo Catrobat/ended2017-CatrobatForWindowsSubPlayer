@@ -2,16 +2,16 @@
 
 namespace Core
 {
-	ref class BroadcastMessageSender;
-	delegate void BroadcastMessageEventHandler(BroadcastMessageSender^ sender, Platform::String ^message);
+    ref class BroadcastMessageSender;
+    delegate void BroadcastMessageEventHandler(BroadcastMessageSender^ sender, Platform::String ^message);
 
-	ref class BroadcastMessageSender sealed
-	{
-	public:
-		BroadcastMessageSender();
+    ref class BroadcastMessageSender sealed
+    {
+    public:
+        BroadcastMessageSender();
 
-		event BroadcastMessageEventHandler^ Broadcast;
+        event BroadcastMessageEventHandler^ Broadcast;
 
-		void SendBroadcastMessage(Platform::String ^message);
-	};
+        void SendBroadcastMessage(Platform::String ^message);
+    };
 }

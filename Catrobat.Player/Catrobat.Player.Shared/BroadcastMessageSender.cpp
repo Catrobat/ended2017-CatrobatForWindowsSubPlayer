@@ -7,5 +7,5 @@ BroadcastMessageSender::BroadcastMessageSender() {}
 
 void BroadcastMessageSender::SendBroadcastMessage(Platform::String ^message)
 {
-	Broadcast(this, message);
+    Broadcast(this, message);
 }

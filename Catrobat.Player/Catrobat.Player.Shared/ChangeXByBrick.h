@@ -5,14 +5,14 @@
 
 namespace ProjectStructure
 {
-	class ChangeXByBrick :
-		public Brick
-	{
-	public:
-		ChangeXByBrick(Catrobat_Player::NativeComponent::IChangeXByBrick^ brick, Script* parent);
-		void Execute();
-	private:
-		std::shared_ptr<FormulaTree> m_offsetX;
-	};
+    class ChangeXByBrick :
+        public Brick
+    {
+    public:
+        ChangeXByBrick(Catrobat_Player::NativeComponent::IChangeXByBrick^ brick, Script* parent);
+        void Execute();
+    private:
+        std::shared_ptr<FormulaTree> m_offsetX;
+    };
 
 }

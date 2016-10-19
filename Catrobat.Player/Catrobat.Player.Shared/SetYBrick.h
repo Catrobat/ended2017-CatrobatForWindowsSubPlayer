@@ -5,13 +5,13 @@
 
 namespace ProjectStructure
 {
-	class SetYBrick :
-		public Brick
-	{
-	public:
-		SetYBrick(Catrobat_Player::NativeComponent::ISetYBrick^ brick, Script* parent);
-		void Execute();
-	private:
-		std::shared_ptr<FormulaTree> m_positionY;
-	};
+    class SetYBrick :
+        public Brick
+    {
+    public:
+        SetYBrick(Catrobat_Player::NativeComponent::ISetYBrick^ brick, Script* parent);
+        void Execute();
+    private:
+        std::shared_ptr<FormulaTree> m_positionY;
+    };
 }

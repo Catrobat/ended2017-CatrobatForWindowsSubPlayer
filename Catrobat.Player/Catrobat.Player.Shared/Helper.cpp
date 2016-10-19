@@ -8,7 +8,7 @@ std::string Helper::StdString(Platform::String^ input)
 {
     std::wstring origin(input->Begin());
     std::string result(origin.begin(), origin.end());
-	return result;
+    return result;
 }
 
 Platform::String^ Helper::PlatformString(std::string input)
@@ -26,7 +26,7 @@ std::string Helper::RetrieveClassName(std::string input)
 }
 
 bool Helper::ConvertStringToDouble(std::string s, double* d)
-{   
+{
     char* check = NULL;
 
     // TODO to check: unexpected behaviour for DBL_MAX and DBL_MIN in s
@@ -34,18 +34,18 @@ bool Helper::ConvertStringToDouble(std::string s, double* d)
 
     if (check == NULL || *check != '\0' || !(*d <= DBL_MAX && *d >= -DBL_MAX))
         return false;
-    
+
     return true;
 }
 
 std::wstring Helper::ConvertStringToLPCWSTR(const std::string& s)
 {
-	int len;
-	int slength = (int)s.length() + 1;
-	len = MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, 0, 0);
-	wchar_t* buf = new wchar_t[len];
-	MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, buf, len);
-	std::wstring r = std::wstring(buf);
-	delete[] buf;
-	return r;
+    int len;
+    int slength = (int)s.length() + 1;
+    len = MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, 0, 0);
+    wchar_t* buf = new wchar_t[len];
+    MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, buf, len);
+    std::wstring r = std::wstring(buf);
+    delete[] buf;
+    return r;
 }

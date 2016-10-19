@@ -4,18 +4,18 @@
 
 namespace Core
 {
-	class BroadcastMessageDaemon
-	{
-	public:
-		static BroadcastMessageDaemon *Instance();
-		void Register(BroadcastMessageListener ^listener);
+    class BroadcastMessageDaemon
+    {
+    public:
+        static BroadcastMessageDaemon *Instance();
+        void Register(BroadcastMessageListener ^listener);
 
-	private:
-		BroadcastMessageDaemon();
+    private:
+        BroadcastMessageDaemon();
 
-		static BroadcastMessageDaemon *__instance;
+        static BroadcastMessageDaemon *__instance;
 
-	public:
-		BroadcastMessageSender ^m_broadcastMessageSender;
-	};
+    public:
+        BroadcastMessageSender ^m_broadcastMessageSender;
+    };
 }

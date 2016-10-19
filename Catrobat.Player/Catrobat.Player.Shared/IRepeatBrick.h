@@ -5,12 +5,12 @@
 
 namespace Catrobat_Player
 {
-	namespace NativeComponent
-	{
-		public interface class IRepeatBrick : public IBrick
-		{
-		public:
-			virtual property IFormulaTree^ TimesToRepeat;
-		};
-	}
+    namespace NativeComponent
+    {
+        public interface class IRepeatBrick : public IBrick
+        {
+        public:
+            virtual property IFormulaTree^ TimesToRepeat;
+        };
+    }
 }

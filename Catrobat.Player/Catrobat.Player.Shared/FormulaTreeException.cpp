@@ -9,7 +9,7 @@ FormulaTreeException::FormulaTreeException(std::string errorMessage)
 }
 
 FormulaTreeException::FormulaTreeException(void* exceptionThrownIn, std::string errorMessage)
-    :BaseException(errorMessage)
+    : BaseException(errorMessage)
 {
 
 }

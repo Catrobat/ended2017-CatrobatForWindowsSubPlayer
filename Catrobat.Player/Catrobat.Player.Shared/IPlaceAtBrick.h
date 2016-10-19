@@ -5,13 +5,13 @@
 
 namespace Catrobat_Player
 {
-	namespace NativeComponent
-	{
-		public interface class IPlaceAtBrick : public IBrick
-		{
-		public:
-			virtual property IFormulaTree^ PositionX;
-			virtual property IFormulaTree^ PositionY;
-		};
-	}
+    namespace NativeComponent
+    {
+        public interface class IPlaceAtBrick : public IBrick
+        {
+        public:
+            virtual property IFormulaTree^ PositionX;
+            virtual property IFormulaTree^ PositionY;
+        };
+    }
 }

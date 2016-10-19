@@ -127,11 +127,11 @@ HRESULT WASAPICapture::InitializeAudioDeviceAsync()
     // IActivateAudioInterfaceCompletionHandler::ActivateCompleted, which must be an agile interface implementation
     hr = ActivateAudioInterfaceAsync(m_DeviceIdString->Data(),
 #ifdef USE_AUDIO_CLIENT_2
-                                     __uuidof(IAudioClient2),
+        __uuidof(IAudioClient2),
 #else
-                                     __uuidof(IAudioClient3),
+        __uuidof(IAudioClient3),
 #endif
-                                     nullptr, this, &asyncOp);
+        nullptr, this, &asyncOp);
     if (FAILED(hr))
     {
         m_DeviceStateChanged->SetState(DeviceState::DeviceStateInError, hr, true);
@@ -248,11 +248,11 @@ HRESULT WASAPICapture::ActivateCompleted(IActivateAudioInterfaceAsyncOperation *
     {
 #endif
         hr = m_AudioClient->Initialize(AUDCLNT_SHAREMODE_SHARED,
-                                       AUDCLNT_STREAMFLAGS_EVENTCALLBACK,
-                                       200000,
-                                       0,
-                                       m_MixFormat,
-                                       nullptr);
+            AUDCLNT_STREAMFLAGS_EVENTCALLBACK,
+            200000,
+            0,
+            m_MixFormat,
+            nullptr);
 #ifndef USE_AUDIO_CLIENT_2
     }
     else

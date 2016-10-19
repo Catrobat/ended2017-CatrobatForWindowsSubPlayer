@@ -7,15 +7,15 @@
 
 namespace ProjectStructure
 {
-	class ContainerBrick :
-		public Brick
-	{
-	public:
-		ContainerBrick(TypeOfBrick brickType, Script* parent);
-		virtual void Execute() = 0;
+    class ContainerBrick :
+        public Brick
+    {
+    public:
+        ContainerBrick(TypeOfBrick brickType, Script* parent);
+        virtual void Execute() = 0;
 
-		virtual std::list<std::unique_ptr<Brick>> *ListPointer();
-	protected:
-		std::list<std::unique_ptr<Brick>> m_brickList;
-	};
+        virtual std::list<std::unique_ptr<Brick>> *ListPointer();
+    protected:
+        std::list<std::unique_ptr<Brick>> m_brickList;
+    };
 }

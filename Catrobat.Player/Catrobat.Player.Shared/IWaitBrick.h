@@ -5,12 +5,12 @@
 
 namespace Catrobat_Player
 {
-	namespace NativeComponent
-	{
-		public interface class IWaitBrick : public IBrick
-		{
-		public:
-			virtual property IFormulaTree^ TimeToWaitInSeconds;
-		};
-	}
+    namespace NativeComponent
+    {
+        public interface class IWaitBrick : public IBrick
+        {
+        public:
+            virtual property IFormulaTree^ TimeToWaitInSeconds;
+        };
+    }
 }

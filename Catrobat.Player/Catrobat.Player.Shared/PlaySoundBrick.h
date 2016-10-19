@@ -5,14 +5,14 @@
 
 namespace ProjectStructure
 {
-	class PlaySoundBrick :
-		public Brick
-	{
-	public:
-		PlaySoundBrick(Catrobat_Player::NativeComponent::IPlaySoundBrick^ brick, Script* parent);
-		void Execute();
-	private:
-		std::string m_filename;
-		std::string m_name;
-	};
+    class PlaySoundBrick :
+        public Brick
+    {
+    public:
+        PlaySoundBrick(Catrobat_Player::NativeComponent::IPlaySoundBrick^ brick, Script* parent);
+        void Execute();
+    private:
+        std::string m_filename;
+        std::string m_name;
+    };
 }

@@ -9,46 +9,46 @@
 
 namespace Catrobat_Player
 {
-	public ref class AudioDataReadyEventArgs sealed
-	{
-	internal:
-		AudioDataReadyEventArgs(Platform::Array<int, 1>^ data, UINT32 size) :
+    public ref class AudioDataReadyEventArgs sealed
+    {
+    internal:
+        AudioDataReadyEventArgs(Platform::Array<int, 1>^ data, UINT32 size) :
             m_DataArray(data),
-			m_Size(size)
-		{};
+            m_Size(size)
+        {};
 
-		property Platform::Array<int, 1>^ PcmData
-		{
-			Platform::Array<int, 1>^ get() { return m_DataArray; }
-		};
+        property Platform::Array<int, 1>^ PcmData
+        {
+            Platform::Array<int, 1>^ get() { return m_DataArray; }
+        };
 
-		property UINT32 Size
-		{
-			UINT32 get() { return m_Size; }
-		};
+        property UINT32 Size
+        {
+            UINT32 get() { return m_Size; }
+        };
 
-	private:
-		Platform::Array<int, 1>^     m_DataArray;
-		UINT32                      m_Size;
-	};
+    private:
+        Platform::Array<int, 1>^     m_DataArray;
+        UINT32                      m_Size;
+    };
 
-	// AudioDataReady delegate
-	public delegate void AudioDataReadyHandler(Platform::Object^ sender, AudioDataReadyEventArgs^ e);
+    // AudioDataReady delegate
+    public delegate void AudioDataReadyHandler(Platform::Object^ sender, AudioDataReadyEventArgs^ e);
 
-	// AudioDataReady Event
-	public ref class AudioDataReadyEvent sealed
-	{
-	public:
-		AudioDataReadyEvent() {};
+    // AudioDataReady Event
+    public ref class AudioDataReadyEvent sealed
+    {
+    public:
+        AudioDataReadyEvent() {};
 
-	internal:
-		void SendEvent(Object^ obj, Platform::Array<int, 1>^ points, UINT32 size)
-		{
-			AudioDataReadyEventArgs^ e = ref new AudioDataReadyEventArgs(points, size);
-			AudioDataReady(obj, e);
-		}
+    internal:
+        void SendEvent(Object^ obj, Platform::Array<int, 1>^ points, UINT32 size)
+        {
+            AudioDataReadyEventArgs^ e = ref new AudioDataReadyEventArgs(points, size);
+            AudioDataReady(obj, e);
+        }
 
-	public:
-		static event AudioDataReadyHandler^    AudioDataReady;
-	};
+    public:
+        static event AudioDataReadyHandler^    AudioDataReady;
+    };
 }

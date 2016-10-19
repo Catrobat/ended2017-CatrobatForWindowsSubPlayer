@@ -26,39 +26,39 @@ class DDSLoader
 {
 public:
 
-	struct DDS_PIXELFORMAT {
-	  DWORD dwSize;
-	  DWORD dwFlags;
-	  DWORD dwFourCC;
-	  DWORD dwRGBBitCount;
-	  DWORD dwRBitMask;
-	  DWORD dwGBitMask;
-	  DWORD dwBBitMask;
-	  DWORD dwABitMask;
-	};
+    struct DDS_PIXELFORMAT {
+        DWORD dwSize;
+        DWORD dwFlags;
+        DWORD dwFourCC;
+        DWORD dwRGBBitCount;
+        DWORD dwRBitMask;
+        DWORD dwGBitMask;
+        DWORD dwBBitMask;
+        DWORD dwABitMask;
+    };
 
-	typedef struct {
-	  DWORD           dwSize;
-	  DWORD           dwFlags;
-	  DWORD           dwHeight;
-	  DWORD           dwWidth;
-	  DWORD           dwPitchOrLinearSize;
-	  DWORD           dwDepth;
-	  DWORD           dwMipMapCount;
-	  DWORD           dwReserved1[11];
-	  DDS_PIXELFORMAT ddspf;
-	  DWORD           dwCaps;
-	  DWORD           dwCaps2;
-	  DWORD           dwCaps3;
-	  DWORD           dwCaps4;
-	  DWORD           dwReserved2;
-	} DDS_HEADER;
+    typedef struct {
+        DWORD           dwSize;
+        DWORD           dwFlags;
+        DWORD           dwHeight;
+        DWORD           dwWidth;
+        DWORD           dwPitchOrLinearSize;
+        DWORD           dwDepth;
+        DWORD           dwMipMapCount;
+        DWORD           dwReserved1[11];
+        DDS_PIXELFORMAT ddspf;
+        DWORD           dwCaps;
+        DWORD           dwCaps2;
+        DWORD           dwCaps3;
+        DWORD           dwCaps4;
+        DWORD           dwReserved2;
+    } DDS_HEADER;
 
     static void LoadTexture(ID3D11Device* d3dDevice, std::string filename, ID3D11Resource** texture, ID3D11ShaderResourceView** shaderResourceView, unsigned int *width, unsigned int *height);
 
 private:
 
-	static void ConvertToDDS(std::vector<unsigned char> image, unsigned int width,  unsigned int height, BYTE **stream, unsigned int *streamSize);
-	static void WriteDWord(BYTE *stream, int *byteIndex, DWORD dword);
+    static void ConvertToDDS(std::vector<unsigned char> image, unsigned int width, unsigned int height, BYTE **stream, unsigned int *streamSize);
+    static void WriteDWord(BYTE *stream, int *byteIndex, DWORD dword);
 };
 

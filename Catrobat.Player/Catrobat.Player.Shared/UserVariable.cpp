@@ -10,26 +10,26 @@ UserVariable::UserVariable(Catrobat_Player::NativeComponent::IUserVariable^ user
 }
 
 UserVariable::UserVariable(string name, string value)
-	: m_name(name), m_value(value)
+    : m_name(name), m_value(value)
 {
 }
 
 UserVariable::UserVariable(pair<string, string> variable)
-	: m_name(variable.first), m_value(variable.second)
+    : m_name(variable.first), m_value(variable.second)
 {
 }
 
 string UserVariable::GetName()
 {
-	return m_name;
+    return m_name;
 }
 
 string UserVariable::GetValue()
 {
-	return m_value;
+    return m_value;
 }
 
 void UserVariable::SetValue(string value)
 {
-	m_value = value;
+    m_value = value;
 }

@@ -5,13 +5,13 @@
 
 namespace ProjectStructure
 {
-	class ChangeVolumeByNBrick : public Brick
-	{
-		public:
-			ChangeVolumeByNBrick(Catrobat_Player::NativeComponent::IChangeVolumeByNBrick^ brick, Script* parent);
-			void Execute();
+    class ChangeVolumeByNBrick : public Brick
+    {
+    public:
+        ChangeVolumeByNBrick(Catrobat_Player::NativeComponent::IChangeVolumeByNBrick^ brick, Script* parent);
+        void Execute();
 
-		private:
-			std::shared_ptr<FormulaTree> m_volumeChange;
-	};
+    private:
+        std::shared_ptr<FormulaTree> m_volumeChange;
+    };
 }

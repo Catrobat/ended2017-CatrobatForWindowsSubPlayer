@@ -5,21 +5,21 @@
 
 namespace ProjectStructure
 {
-	class WhenScript :
-		public Script
-	{
-	public:
-		enum Action
-		{
-			Tapped
-		};
+    class WhenScript :
+        public Script
+    {
+    public:
+        enum Action
+        {
+            Tapped
+        };
 
-		WhenScript(Catrobat_Player::NativeComponent::IWhenScript^ whenScript, Object* parent);
-		~WhenScript();
+        WhenScript(Catrobat_Player::NativeComponent::IWhenScript^ whenScript, Object* parent);
+        ~WhenScript();
 
-		int GetAction();
+        int GetAction();
 
-	private:
-		int m_action;
-	};
+    private:
+        int m_action;
+    };
 }

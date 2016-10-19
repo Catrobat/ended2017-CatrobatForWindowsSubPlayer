@@ -6,11 +6,11 @@
 using namespace ProjectStructure;
 
 HideBrick::HideBrick(Script* parent) :
-	Brick(TypeOfBrick::HideBrick, parent)
+    Brick(TypeOfBrick::HideBrick, parent)
 {
 }
 
 void HideBrick::Execute()
 {
-	m_parent->GetParent()->SetTransparency(1.0f);
+    m_parent->GetParent()->SetTransparency(1.0f);
 }

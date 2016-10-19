@@ -3,7 +3,7 @@
 
 
 SoundInfo::SoundInfo(std::string soundInfoReference) :
-	m_soundInfoReference(soundInfoReference)
+    m_soundInfoReference(soundInfoReference)
 {
 }
 

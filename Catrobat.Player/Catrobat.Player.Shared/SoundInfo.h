@@ -5,9 +5,9 @@
 class SoundInfo
 {
 public:
-	SoundInfo(std::string soundInfoReference);
+    SoundInfo(std::string soundInfoReference);
 
-private: 
-	std::string m_soundInfoReference;
+private:
+    std::string m_soundInfoReference;
 };
 
