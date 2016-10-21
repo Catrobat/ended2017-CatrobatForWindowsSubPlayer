@@ -21,6 +21,8 @@
 #include "ChangeXByBrick.h"
 #include "IChangeYByBrick.h"
 #include "ChangeYByBrick.h"
+#include "IClearGraphicEffectBrick.h"
+#include "ClearGraphicEffectBrick.h"
 #include "ICostumeBrick.h"
 #include "CostumeBrick.h"
 #include "IForeverBrick.h"
@@ -236,6 +238,13 @@ Script::Script(TypeOfScript scriptType, Object* parent, Catrobat_Player::NativeC
         if (changeYByBrick)
         {
             usedList->push_back(std::unique_ptr<Brick>(make_unique<ChangeYByBrick>(changeYByBrick, this)));
+            continue;
+        }
+
+        auto clearGraphicEffectBrick = dynamic_cast<Catrobat_Player::NativeComponent::IClearGraphicEffectBrick^>(brick);
+        if (clearGraphicEffectBrick)
+        {
+            usedList->push_back(std::unique_ptr<Brick>(make_unique<ClearGraphicEffectBrick>(clearGraphicEffectBrick, this)));
             continue;
         }
 
