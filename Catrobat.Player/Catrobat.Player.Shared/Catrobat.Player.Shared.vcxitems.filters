@@ -373,7 +373,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)SetVolumeToBrick.h">
       <Filter>Objects\Bricks\Sound</Filter>
     </ClInclude>
-	<ClInclude Include="$(MSBuildThisFileDirectory)StopSoundsBrick.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)StopSoundsBrick.h">
       <Filter>Objects\Bricks\Sound</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)IChangeVolumeByNBrick.h">
@@ -382,8 +382,20 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)ISetVolumeToBrick.h">
       <Filter>NativeComponent\Interface\Bricks</Filter>
     </ClInclude>
-	<ClInclude Include="$(MSBuildThisFileDirectory)IStopSoundsBrick.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)IStopSoundsBrick.h">
       <Filter>NativeComponent\Interface\Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)IClearGraphicEffectBrick.h">
+      <Filter>NativeComponent\Interface\Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ClearGraphicEffectBrick.h">
+      <Filter>Objects\Bricks\Look</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)IComeToFrontBrick.h">
+      <Filter>NativeComponent\Interface\Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ComeToFrontBrick.h">
+      <Filter>Objects\Bricks\Movement</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -612,6 +624,12 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)StopSoundsBrick.cpp">
       <Filter>Objects\Bricks\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ClearGraphicEffectBrick.cpp">
+      <Filter>Objects\Bricks\Look</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ComeToFrontBrick.cpp">
+      <Filter>Objects\Bricks\Movement</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

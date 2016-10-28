@@ -23,6 +23,8 @@
 #include "ChangeYByBrick.h"
 #include "IClearGraphicEffectBrick.h"
 #include "ClearGraphicEffectBrick.h"
+#include "IComeToFrontBrick.h"
+#include "ComeToFrontBrick.h"
 #include "ICostumeBrick.h"
 #include "CostumeBrick.h"
 #include "IForeverBrick.h"
@@ -247,6 +249,13 @@ Script::Script(TypeOfScript scriptType, Object* parent, Catrobat_Player::NativeC
             usedList->push_back(std::unique_ptr<Brick>(make_unique<ClearGraphicEffectBrick>(clearGraphicEffectBrick, this)));
             continue;
         }
+
+		auto comeToFrontBrick = dynamic_cast<Catrobat_Player::NativeComponent::IComeToFrontBrick^>(brick);
+		if (comeToFrontBrick)
+		{
+			usedList->push_back(std::unique_ptr<Brick>(make_unique<ComeToFrontBrick>(comeToFrontBrick, this)));
+			continue;
+		}
 
         auto costumeBrick = dynamic_cast<Catrobat_Player::NativeComponent::ICostumeBrick^>(brick);
         if (costumeBrick)

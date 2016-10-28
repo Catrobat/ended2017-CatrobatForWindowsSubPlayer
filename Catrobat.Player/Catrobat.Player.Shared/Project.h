@@ -24,11 +24,12 @@ namespace ProjectStructure
         std::shared_ptr<UserVariable> GetVariable(std::string name);
 
         std::unique_ptr<Header> const & GetHeader() { return m_header; }
-        std::map<std::string, std::shared_ptr<Object> > GetObjectList() { return m_objectList; }
+        std::map<int, std::shared_ptr<Object> > GetObjectList() { return m_objectList; }
+		void SetObjectList(std::map<int, std::shared_ptr<Object>> object_list) { m_objectList = object_list; }
 
     private:
         std::unique_ptr<Header> m_header;
-        std::map<std::string, std::shared_ptr<Object> > m_objectList;
+        std::map<int, std::shared_ptr<Object> > m_objectList;
         std::map<std::string, std::shared_ptr<UserVariable> > m_variableList;
     };
 }

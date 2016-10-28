@@ -42,7 +42,8 @@ namespace ProjectStructure
             SetVolumeToBrick,
             ChangeVolumeByNBrick,
             StopSoundsBrick,
-            ClearGraphicEffectBrick
+            ClearGraphicEffectBrick,
+			ComeToFrontBrick
         };
 
         Script* GetParent();
