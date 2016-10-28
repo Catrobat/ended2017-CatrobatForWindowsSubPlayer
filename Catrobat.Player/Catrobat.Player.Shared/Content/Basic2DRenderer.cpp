@@ -56,7 +56,7 @@ void Basic2DRenderer::ReleaseDeviceDependentResources()
 
 void Basic2DRenderer::PointerPressed(D2D1_POINT_2F point)
 {
-    map<string, shared_ptr<Object>> ::reverse_iterator var;
+    map<int, shared_ptr<Object>> ::reverse_iterator var;
     map<int, shared_ptr<Object>> objects = ProjectDaemon::Instance()->GetProject()->GetObjectList();
 
     for (var = objects.rbegin(); var != objects.rend(); var++)
