@@ -32,6 +32,8 @@
 #include "IForeverEndBrick.h"
 #include "IGlideBrick.h"
 #include "GlideToBrick.h"
+#include "IGoNStepsBackBrick.h"
+#include "GoNStepsBackBrick.h"
 #include "IHideBrick.h"
 #include "HideBrick.h"
 #include "IIfBrick.h"
@@ -270,6 +272,13 @@ Script::Script(TypeOfScript scriptType, Object* parent, Catrobat_Player::NativeC
             usedList->push_back(std::unique_ptr<Brick>(make_unique<GlideToBrick>(glideToBrick, this)));
             continue;
         }
+
+		auto goNStepsBackBrick = dynamic_cast<Catrobat_Player::NativeComponent::IGoNStepsBackBrick^>(brick);
+		if (goNStepsBackBrick)
+		{
+			usedList->push_back(std::unique_ptr<Brick>(make_unique<GoNStepsBackBrick>(goNStepsBackBrick, this)));
+			continue;
+		}
 
         auto hideBrick = dynamic_cast<Catrobat_Player::NativeComponent::IHideBrick^>(brick);
         if (hideBrick)
