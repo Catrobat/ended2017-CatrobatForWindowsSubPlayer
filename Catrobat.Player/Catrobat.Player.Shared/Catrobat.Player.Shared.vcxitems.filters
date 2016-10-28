@@ -397,6 +397,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)ComeToFrontBrick.h">
       <Filter>Objects\Bricks\Movement</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)IGoNStepsBackBrick.h">
+      <Filter>NativeComponent\Interface\Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)GoNStepsBackBrick.h">
+      <Filter>Objects\Bricks\Movement</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp">
@@ -629,6 +635,9 @@
       <Filter>Objects\Bricks\Look</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)ComeToFrontBrick.cpp">
+      <Filter>Objects\Bricks\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)GoNStepsBackBrick.cpp">
       <Filter>Objects\Bricks\Movement</Filter>
     </ClCompile>
   </ItemGroup>
