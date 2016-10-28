@@ -361,12 +361,24 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)VoiceCallback.h">
       <Filter>Sounds</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)AudioData.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Common.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)DeviceState.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)IVibrationBrick.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)VibrationBrick.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)WASAPICapture.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)AudioData.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Common.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)DeviceState.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)IVibrationBrick.h">
+      <Filter>NativeComponent\Interface\Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)VibrationBrick.h">
+      <Filter>Objects\Bricks\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)WASAPICapture.h">
+      <Filter>Formula</Filter>
+    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)ChangeVolumeByNBrick.h">
       <Filter>Objects\Bricks\Sound</Filter>
     </ClInclude>
@@ -385,24 +397,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)IStopSoundsBrick.h">
       <Filter>NativeComponent\Interface\Bricks</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)IClearGraphicEffectBrick.h">
-      <Filter>NativeComponent\Interface\Bricks</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)ClearGraphicEffectBrick.h">
-      <Filter>Objects\Bricks\Look</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)IComeToFrontBrick.h">
-      <Filter>NativeComponent\Interface\Bricks</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)ComeToFrontBrick.h">
-      <Filter>Objects\Bricks\Movement</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)IGoNStepsBackBrick.h">
-      <Filter>NativeComponent\Interface\Bricks</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)GoNStepsBackBrick.h">
-      <Filter>Objects\Bricks\Movement</Filter>
-    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ClearGraphicEffectBrick.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ComeToFrontBrick.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)GoNStepsBackBrick.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)IClearGraphicEffectBrick.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)IComeToFrontBrick.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)IGoNStepsBackBrick.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp">
@@ -620,8 +620,12 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)RiffReader.cpp">
       <Filter>Sounds</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)VibrationBrick.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)WASAPICapture.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)VibrationBrick.cpp">
+      <Filter>Objects\Bricks\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)WASAPICapture.cpp">
+      <Filter>Formula</Filter>
+    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)ChangeVolumeByNBrick.cpp">
       <Filter>Objects\Bricks\Sound</Filter>
     </ClCompile>
@@ -631,15 +635,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)StopSoundsBrick.cpp">
       <Filter>Objects\Bricks\Sound</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)ClearGraphicEffectBrick.cpp">
-      <Filter>Objects\Bricks\Look</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)ComeToFrontBrick.cpp">
-      <Filter>Objects\Bricks\Movement</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)GoNStepsBackBrick.cpp">
-      <Filter>Objects\Bricks\Movement</Filter>
-    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ClearGraphicEffectBrick.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ComeToFrontBrick.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)GoNStepsBackBrick.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">
