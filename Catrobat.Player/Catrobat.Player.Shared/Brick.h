@@ -41,7 +41,10 @@ namespace ProjectStructure
             VibrationBrick,
             SetVolumeToBrick,
             ChangeVolumeByNBrick,
-            StopSoundsBrick
+            StopSoundsBrick,
+            ClearGraphicEffectBrick,
+			ComeToFrontBrick,
+			GoNStepsBackBrick
         };
 
         Script* GetParent();

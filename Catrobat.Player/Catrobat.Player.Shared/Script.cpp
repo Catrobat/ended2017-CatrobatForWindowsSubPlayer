@@ -21,6 +21,10 @@
 #include "ChangeXByBrick.h"
 #include "IChangeYByBrick.h"
 #include "ChangeYByBrick.h"
+#include "IClearGraphicEffectBrick.h"
+#include "ClearGraphicEffectBrick.h"
+#include "IComeToFrontBrick.h"
+#include "ComeToFrontBrick.h"
 #include "ICostumeBrick.h"
 #include "CostumeBrick.h"
 #include "IForeverBrick.h"
@@ -28,6 +32,8 @@
 #include "IForeverEndBrick.h"
 #include "IGlideBrick.h"
 #include "GlideToBrick.h"
+#include "IGoNStepsBackBrick.h"
+#include "GoNStepsBackBrick.h"
 #include "IHideBrick.h"
 #include "HideBrick.h"
 #include "IIfBrick.h"
@@ -239,6 +245,20 @@ Script::Script(TypeOfScript scriptType, Object* parent, Catrobat_Player::NativeC
             continue;
         }
 
+        auto clearGraphicEffectBrick = dynamic_cast<Catrobat_Player::NativeComponent::IClearGraphicEffectBrick^>(brick);
+        if (clearGraphicEffectBrick)
+        {
+            usedList->push_back(std::unique_ptr<Brick>(make_unique<ClearGraphicEffectBrick>(clearGraphicEffectBrick, this)));
+            continue;
+        }
+
+		auto comeToFrontBrick = dynamic_cast<Catrobat_Player::NativeComponent::IComeToFrontBrick^>(brick);
+		if (comeToFrontBrick)
+		{
+			usedList->push_back(std::unique_ptr<Brick>(make_unique<ComeToFrontBrick>(comeToFrontBrick, this)));
+			continue;
+		}
+
         auto costumeBrick = dynamic_cast<Catrobat_Player::NativeComponent::ICostumeBrick^>(brick);
         if (costumeBrick)
         {
@@ -252,6 +272,13 @@ Script::Script(TypeOfScript scriptType, Object* parent, Catrobat_Player::NativeC
             usedList->push_back(std::unique_ptr<Brick>(make_unique<GlideToBrick>(glideToBrick, this)));
             continue;
         }
+
+		auto goNStepsBackBrick = dynamic_cast<Catrobat_Player::NativeComponent::IGoNStepsBackBrick^>(brick);
+		if (goNStepsBackBrick)
+		{
+			usedList->push_back(std::unique_ptr<Brick>(make_unique<GoNStepsBackBrick>(goNStepsBackBrick, this)));
+			continue;
+		}
 
         auto hideBrick = dynamic_cast<Catrobat_Player::NativeComponent::IHideBrick^>(brick);
         if (hideBrick)

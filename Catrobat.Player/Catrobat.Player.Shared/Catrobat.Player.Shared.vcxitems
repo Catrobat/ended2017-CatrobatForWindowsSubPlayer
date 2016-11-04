@@ -44,6 +44,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)ChangeVolumeByNBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ChangeXByBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ChangeYByBrick.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ClearGraphicEffectBrick.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ComeToFrontBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\DeviceResources.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Common\DirectXHelper.h" />
@@ -64,8 +66,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)FormulaTreeException.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)FormulaTreeFatalException.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GlideToBrick.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)GoNStepsBackBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Header.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)IChangeVolumeByNBrick.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)IClearGraphicEffectBrick.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)IComeToFrontBrick.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)IGoNStepsBackBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ISetVolumeToBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)IStopSoundsBrick.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)IVibrationBrick.h" />
@@ -178,6 +184,8 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)ChangeVolumeByNBrick.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)ChangeXByBrick.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)ChangeYByBrick.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ClearGraphicEffectBrick.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ComeToFrontBrick.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Common\DeviceResources.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)CompassProvider.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)ContainerBrick.cpp" />
@@ -191,6 +199,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)FormulaTreeException.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)FormulaTreeFatalException.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GlideToBrick.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)GoNStepsBackBrick.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Header.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Helper.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)HideBrick.cpp" />
