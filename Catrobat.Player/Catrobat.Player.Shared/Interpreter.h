@@ -38,6 +38,7 @@ public:
     int EvaluateFormulaToInt(std::shared_ptr<FormulaTree> tree, ProjectStructure::Object* object);
     float EvaluateFormulaToFloat(std::shared_ptr<FormulaTree> tree, ProjectStructure::Object* object);
     bool EvaluateFormulaToBool(std::shared_ptr<FormulaTree> tree, ProjectStructure::Object* object);
+    std::string EvaluateVariableValue(std::string variable_value, ProjectStructure::Object* object);
 
     void ReadAcceleration();
     float ReadCompass();

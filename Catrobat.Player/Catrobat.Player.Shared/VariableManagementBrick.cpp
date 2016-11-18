@@ -1,4 +1,5 @@
 #include "pch.h"
+#include "Helper.h"
 #include "VariableManagementBrick.h"
 
 using namespace std;

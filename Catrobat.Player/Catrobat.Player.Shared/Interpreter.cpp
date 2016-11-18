@@ -92,6 +92,24 @@ bool Interpreter::EvaluateFormulaToBool(std::shared_ptr<FormulaTree> tree, Objec
         return false;
 }
 
+std::string Interpreter::EvaluateVariableValue(std::string variable_value, Object* object)
+{
+    std::shared_ptr<UserVariable> value_variable_local = object->GetVariable(variable_value);
+    std::shared_ptr<UserVariable> value_variable_global = ProjectDaemon::Instance()->GetProject()->GetVariable(variable_value);
+    if (value_variable_local != NULL)
+    {
+        return EvaluateVariableValue(value_variable_local->GetValue(), object);
+    }
+    if (value_variable_global != NULL)
+    {
+        return EvaluateVariableValue(value_variable_global->GetValue(), object);
+    }
+    else
+    {
+        return variable_value;
+    }
+}
+
 float Interpreter::ReadCompass()
 {
     return m_compassProvider->GetDirection();
