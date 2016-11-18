@@ -1,11 +1,13 @@
 #include "pch.h"
+#include "Helper.h"
 #include "UserVariable.h"
 
 using namespace std;
 using namespace ProjectStructure;
 
 
-UserVariable::UserVariable(Catrobat_Player::NativeComponent::IUserVariable^ userVariable)
+UserVariable::UserVariable(Catrobat_Player::NativeComponent::IUserVariable^ userVariable) :
+    m_name(Helper::StdString(userVariable->Name))
 {
 }
 
