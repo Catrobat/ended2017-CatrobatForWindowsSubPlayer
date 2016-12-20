@@ -15,7 +15,7 @@ namespace ProjectStructure
         virtual void Execute() = 0;
 
     protected:
-        std::shared_ptr<UserVariable> m_variable;
+        std::string m_variableName;
         std::shared_ptr<FormulaTree> m_variableFormula;
     };
 }

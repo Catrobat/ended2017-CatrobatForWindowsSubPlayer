@@ -15,8 +15,6 @@ ChangeVariableBrick::ChangeVariableBrick(Catrobat_Player::NativeComponent::IChan
 void ChangeVariableBrick::Execute()
 {
     // TODO: typecheck and logic
-
-    std::string variable_name = m_variable->GetName();
     std::string variable_value = m_variableFormula->Value();
 
     // Check whether variable value refers to another variable
@@ -27,8 +25,8 @@ void ChangeVariableBrick::Execute()
         double current;
         double to_add;
 
-        std::shared_ptr<UserVariable> variable_local = m_parent->GetParent()->GetVariable(variable_name);
-        std::shared_ptr<UserVariable> variable_global = ProjectDaemon::Instance()->GetProject()->GetVariable(variable_name);
+        std::shared_ptr<UserVariable> variable_local = m_parent->GetParent()->GetVariable(m_variableName);
+        std::shared_ptr<UserVariable> variable_global = ProjectDaemon::Instance()->GetProject()->GetVariable(m_variableName);
         std::shared_ptr<UserVariable> variable = NULL;
         if (variable_global != NULL)
         {
