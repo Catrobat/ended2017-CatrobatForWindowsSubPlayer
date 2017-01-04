@@ -9,7 +9,7 @@ namespace ProjectStructure
         public Brick
     {
     public:
-		ChangeTransparencyByNBrick(Catrobat_Player::NativeComponent::IChangeTransparencyByNBrick^ brick, Script* parent);
+        ChangeTransparencyByNBrick(Catrobat_Player::NativeComponent::IChangeTransparencyByNBrick^ brick, Script* parent);
         void Execute();
     private:
         std::shared_ptr<FormulaTree> m_transparency;

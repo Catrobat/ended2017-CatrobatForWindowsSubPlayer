@@ -35,7 +35,7 @@ namespace ProjectStructure
             BroadcastBrick,
             IfBrick,
             ContainerBrick,
-			ChangeTransparencyByNBrick,
+            ChangeTransparencyByNBrick,
             NextlookBrick,
             SetVariableBrick,
             VibrationBrick,
@@ -43,8 +43,8 @@ namespace ProjectStructure
             ChangeVolumeByNBrick,
             StopSoundsBrick,
             ClearGraphicEffectBrick,
-			ComeToFrontBrick,
-			GoNStepsBackBrick
+            ComeToFrontBrick,
+            GoNStepsBackBrick
         };
 
         Script* GetParent();

@@ -113,7 +113,7 @@ namespace Constants
             static const std::string PointInDirectionBrick       =       "pointInDirectionBrick";
             static const std::string TurnLeftBrick               =       "turnLeftBrick";
             static const std::string TurnRightBrick              =       "turnRightBrick";
-			static const std::string MoveNStepsBrick			 =		 "moveNStepsBrick";
+            static const std::string MoveNStepsBrick			 =		 "moveNStepsBrick";
             static const std::string ChangeTransparency          =       "changeTransparency";
             static const std::string TimeToWaitInSeconds         =       "timeToWaitInSeconds";
             static const std::string Size                        =       "size";
@@ -122,7 +122,7 @@ namespace Constants
             static const std::string XMovement                   =       "xMovement";
             static const std::string YMovement                   =       "yMovement";
             static const std::string Degrees                     =       "degrees";
-			static const std::string Steps						 =		 "steps";
+            static const std::string Steps						 =		 "steps";
             static const std::string XDestination                =       "xDestination";
             static const std::string YDestination                =       "yDestination";
             static const std::string DurationInSeconds			 =		 "durationInSeconds";
