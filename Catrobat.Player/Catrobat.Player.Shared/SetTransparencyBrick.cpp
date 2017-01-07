@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "SetGhostEffectBrick.h"
+#include "SetTransparencyBrick.h"
 #include "Script.h"
 #include "Object.h"
 #include "Interpreter.h"
@@ -7,13 +7,13 @@
 using namespace ProjectStructure;
 using namespace std;
 
-SetGhostEffectBrick::SetGhostEffectBrick(Catrobat_Player::NativeComponent::ISetGhostEffectBrick^ brick, Script* parent) :
-    Brick(TypeOfBrick::SetGhostEffectBrick, parent),
+SetTransparencyBrick::SetTransparencyBrick(Catrobat_Player::NativeComponent::ISetTransparencyBrick^ brick, Script* parent) :
+    Brick(TypeOfBrick::SetTransparencyBrick, parent),
     m_transparency(make_shared<FormulaTree>(brick->Transparency))
 {
 }
 
-void SetGhostEffectBrick::Execute()
+void SetTransparencyBrick::Execute()
 {
     m_parent->GetParent()->SetTransparency((Interpreter::Instance()->EvaluateFormulaToFloat(m_transparency, GetParent()->GetParent()) / 100.0f));
 }

@@ -87,7 +87,7 @@ namespace Constants
             static const std::string SetLookBrick                =       "setLookBrick";
             static const std::string WaitBrick                   =       "waitBrick";
             static const std::string PlaceAtBrick                =       "placeAtBrick";
-            static const std::string SetGhostEffectBrick         =       "setGhostEffectBrick";
+            static const std::string SetTransparencyBrick        =       "setTransparencyBrick";
             static const std::string PlaySoundBrick              =       "playSoundBrick";
             static const std::string GlideToBrick                =       "glideToBrick";
             static const std::string BroadcastBrick              =       "broadcastBrick";
@@ -102,7 +102,7 @@ namespace Constants
             static const std::string LoopEndBrick                =       "loopEndBrick";
             static const std::string SetVariableBrick            =       "setVariableBrick";
             static const std::string ChangeVariableBrick         =       "changeVariableBrick";
-            static const std::string ChangeGhostEffectByNBrick   =       "changeGhostEffectByNBrick";
+            static const std::string ChangeTransparencyByNBrick  =       "changeTransparencyByNBrick";
             static const std::string SetSizeToBrick              =       "setSizeToBrick";
             static const std::string ChangeSizeByNBrick          =       "changeSizeByNBrick";
             static const std::string NextLookBrick               =       "nextLookBrick";
@@ -113,8 +113,8 @@ namespace Constants
             static const std::string PointInDirectionBrick       =       "pointInDirectionBrick";
             static const std::string TurnLeftBrick               =       "turnLeftBrick";
             static const std::string TurnRightBrick              =       "turnRightBrick";
-			static const std::string MoveNStepsBrick			 =		 "moveNStepsBrick";
-            static const std::string ChangeGhostEffect           =       "changeGhostEffect";
+            static const std::string MoveNStepsBrick			 =		 "moveNStepsBrick";
+            static const std::string ChangeTransparency          =       "changeTransparency";
             static const std::string TimeToWaitInSeconds         =       "timeToWaitInSeconds";
             static const std::string Size                        =       "size";
             static const std::string XPosition                   =       "xPosition";
@@ -122,7 +122,7 @@ namespace Constants
             static const std::string XMovement                   =       "xMovement";
             static const std::string YMovement                   =       "yMovement";
             static const std::string Degrees                     =       "degrees";
-			static const std::string Steps						 =		 "steps";
+            static const std::string Steps						 =		 "steps";
             static const std::string XDestination                =       "xDestination";
             static const std::string YDestination                =       "yDestination";
             static const std::string DurationInSeconds			 =		 "durationInSeconds";

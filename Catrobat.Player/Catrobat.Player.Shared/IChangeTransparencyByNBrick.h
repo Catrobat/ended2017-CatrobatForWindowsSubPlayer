@@ -7,7 +7,7 @@ namespace Catrobat_Player
 {
     namespace NativeComponent
     {
-        public interface class ISetGhostEffectBrick : public IBrick
+        public interface class IChangeTransparencyByNBrick : public IBrick
         {
         public:
             virtual property IFormulaTree^ Transparency;

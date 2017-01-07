@@ -16,7 +16,7 @@ namespace ProjectStructure
             CostumeBrick,
             WaitBrick,
             PlaceAtBrick,
-            SetGhostEffectBrick,
+            SetTransparencyBrick,
             PlaySoundBrick,
             TurnLeftBrick,
             ForeverBrick,
@@ -35,7 +35,7 @@ namespace ProjectStructure
             BroadcastBrick,
             IfBrick,
             ContainerBrick,
-            ChangeGhostEffectByBrick,
+            ChangeTransparencyByNBrick,
             NextlookBrick,
             SetVariableBrick,
             VibrationBrick,
@@ -43,8 +43,8 @@ namespace ProjectStructure
             ChangeVolumeByNBrick,
             StopSoundsBrick,
             ClearGraphicEffectBrick,
-			ComeToFrontBrick,
-			GoNStepsBackBrick
+            ComeToFrontBrick,
+            GoNStepsBackBrick
         };
 
         Script* GetParent();

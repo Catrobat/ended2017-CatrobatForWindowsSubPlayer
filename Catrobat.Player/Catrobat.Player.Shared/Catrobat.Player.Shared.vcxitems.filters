@@ -142,9 +142,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)WaitBrick.h">
       <Filter>Objects\Bricks\Control</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)ChangeGhostEffectByBrick.h">
-      <Filter>Objects\Bricks\Look</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)ChangeSizeByBrick.h">
       <Filter>Objects\Bricks\Look</Filter>
     </ClInclude>
@@ -155,9 +152,6 @@
       <Filter>Objects\Bricks\Look</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)NextLookBrick.h">
-      <Filter>Objects\Bricks\Look</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)SetGhostEffectBrick.h">
       <Filter>Objects\Bricks\Look</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)SetSizeToBrick.h">
@@ -280,9 +274,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)IRepeatBrick.h">
       <Filter>NativeComponent\Interface\Bricks</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)IChangeGhostEffectByBrick.h">
-      <Filter>NativeComponent\Interface\Bricks</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)IChangeSizeByBrick.h">
       <Filter>NativeComponent\Interface\Bricks</Filter>
     </ClInclude>
@@ -293,9 +284,6 @@
       <Filter>NativeComponent\Interface\Bricks</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)INextLookBrick.h">
-      <Filter>NativeComponent\Interface\Bricks</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)ISetGhostEffectBrick.h">
       <Filter>NativeComponent\Interface\Bricks</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)IShowBrick.h">
@@ -414,6 +402,18 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)ComeToFrontBrick.h">
       <Filter>Objects\Bricks\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)IChangeTransparencyByNBrick.h">
+      <Filter>NativeComponent\Interface\Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ChangeTransparencyByNBrick.h">
+      <Filter>Objects\Bricks\Look</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ISetTransparencyBrick.h">
+      <Filter>NativeComponent\Interface\Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)SetTransparencyBrick.h">
+      <Filter>Objects\Bricks\Look</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -542,9 +542,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)WaitBrick.cpp">
       <Filter>Objects\Bricks\Control</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)ChangeGhostEffectByBrick.cpp">
-      <Filter>Objects\Bricks\Look</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)ChangeSizeByBrick.cpp">
       <Filter>Objects\Bricks\Look</Filter>
     </ClCompile>
@@ -555,9 +552,6 @@
       <Filter>Objects\Bricks\Look</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)NextLookBrick.cpp">
-      <Filter>Objects\Bricks\Look</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)SetGhostEffectBrick.cpp">
       <Filter>Objects\Bricks\Look</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)SetSizeToBrick.cpp">
@@ -655,6 +649,12 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)ComeToFrontBrick.cpp">
       <Filter>Objects\Bricks\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ChangeTransparencyByNBrick.cpp">
+      <Filter>Objects\Bricks\Look</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)SetTransparencyBrick.cpp">
+      <Filter>Objects\Bricks\Look</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

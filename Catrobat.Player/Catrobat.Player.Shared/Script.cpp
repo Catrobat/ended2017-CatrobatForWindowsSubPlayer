@@ -9,8 +9,8 @@
 #include "WaitBrick.h"
 #include "IBroadcastBrick.h"
 #include "BroadcastBrick.h"
-#include "IChangeGhostEffectByBrick.h"
-#include "ChangeGhostEffectByBrick.h"
+#include "IChangeTransparencyByNBrick.h"
+#include "ChangeTransparencyByNBrick.h"
 #include "IChangeSizeByBrick.h"
 #include "ChangeSizeByBrick.h"
 #include "IChangeVariableBrick.h"
@@ -53,8 +53,8 @@
 #include "IRepeatBrick.h"
 #include "RepeatBrick.h"
 #include "IRepeatEndBrick.h"
-#include "ISetGhostEffectBrick.h"
-#include "SetGhostEffectBrick.h"
+#include "ISetTransparencyBrick.h"
+#include "SetTransparencyBrick.h"
 #include "ISetVariableBrick.h"
 #include "SetVariableBrick.h"
 #include "ISetVolumeToBrick.h"
@@ -203,10 +203,10 @@ Script::Script(TypeOfScript scriptType, Object* parent, Catrobat_Player::NativeC
             continue;
         }
 
-        auto changeGhostEffectByBrick = dynamic_cast<Catrobat_Player::NativeComponent::IChangeGhostEffectByBrick^>(brick);
-        if (changeGhostEffectByBrick)
+        auto changeTransparencyByNBrick = dynamic_cast<Catrobat_Player::NativeComponent::IChangeTransparencyByNBrick^>(brick);
+        if (changeTransparencyByNBrick)
         {
-            usedList->push_back(std::unique_ptr<Brick>(make_unique<ChangeGhostEffectByBrick>(changeGhostEffectByBrick, this)));
+            usedList->push_back(std::unique_ptr<Brick>(make_unique<ChangeTransparencyByNBrick>(changeTransparencyByNBrick, this)));
             continue;
         }
 
@@ -322,10 +322,10 @@ Script::Script(TypeOfScript scriptType, Object* parent, Catrobat_Player::NativeC
             continue;
         }
 
-        auto setGhostEffectBrick = dynamic_cast<Catrobat_Player::NativeComponent::ISetGhostEffectBrick^>(brick);
-        if (setGhostEffectBrick)
+        auto setTransparencyBrick = dynamic_cast<Catrobat_Player::NativeComponent::ISetTransparencyBrick^>(brick);
+        if (setTransparencyBrick)
         {
-            usedList->push_back(std::unique_ptr<Brick>(make_unique<SetGhostEffectBrick>(setGhostEffectBrick, this)));
+            usedList->push_back(std::unique_ptr<Brick>(make_unique<SetTransparencyBrick>(setTransparencyBrick, this)));
             continue;
         }
 

@@ -8,7 +8,7 @@ using namespace ProjectStructure;
 using namespace std;
 
 SetSizeToBrick::SetSizeToBrick(Catrobat_Player::NativeComponent::ISetSizeToBrick^ brick, Script* parent) :
-    Brick(TypeOfBrick::SetGhostEffectBrick, parent),
+    Brick(TypeOfBrick::SetSizeToBrick, parent),
     m_scale(make_shared<FormulaTree>(brick->Scale))
 {
 }
